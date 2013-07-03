@@ -1,4 +1,24 @@
 FrayAcademicSystem::Application.routes.draw do
+  resources :lectures
+
+  resources :records
+
+  resources :schedules
+
+  resources :stages
+
+  resources :subjects
+
+  resources :users
+
+  resources :groups
+
+  resources :grades
+
+  resources :periods
+
+  resources :institutions
+
   resources :materia
   get "tipos/new_grado", to: "tipos#new_grado"
   resources :tipos
