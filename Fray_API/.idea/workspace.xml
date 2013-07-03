@@ -144,7 +144,7 @@
       <file leaf-file-name="grade.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/grade.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="13" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13465346">
+            <state line="4" column="9" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13465346">
               <folding />
             </state>
           </provider>
@@ -855,7 +855,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/grade.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13465346">
+        <state line="4" column="9" selection-start="104" selection-end="104" vertical-scroll-proportion="0.13465346">
           <folding />
         </state>
       </provider>
