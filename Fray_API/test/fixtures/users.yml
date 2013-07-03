@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  type: MyString
+  enrollment_code: MyString
+  enrollment_outer_code: MyString
+  studies: MyString
+  salary: MyString
+  first_name: MyString
+  middle_name: MyString
+  first_last_name: MyString
+  second_last_name: MyString
+  identification_card: MyString
+  phone_1: MyString
+  phone_2: MyString
+  address_1: MyString
+  address_2: MyString
+  nationality: MyString
+  registration_date: 2013-07-02
+  inactivity_date: 2013-07-02
+  active: false
+  passport: MyString
+
+two:
+  id: 1
+  type: MyString
+  enrollment_code: MyString
+  enrollment_outer_code: MyString
+  studies: MyString
+  salary: MyString
+  first_name: MyString
+  middle_name: MyString
+  first_last_name: MyString
+  second_last_name: MyString
+  identification_card: MyString
+  phone_1: MyString
+  phone_2: MyString
+  address_1: MyString
+  address_2: MyString
+  nationality: MyString
+  registration_date: 2013-07-02
+  inactivity_date: 2013-07-02
+  active: false
+  passport: MyString

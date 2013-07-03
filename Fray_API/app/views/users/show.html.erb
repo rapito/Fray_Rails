@@ -1,0 +1,105 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @user.id %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @user.type %>
+</p>
+
+<p>
+  <b>Enrollment code:</b>
+  <%= @user.enrollment_code %>
+</p>
+
+<p>
+  <b>Enrollment outer code:</b>
+  <%= @user.enrollment_outer_code %>
+</p>
+
+<p>
+  <b>Studies:</b>
+  <%= @user.studies %>
+</p>
+
+<p>
+  <b>Salary:</b>
+  <%= @user.salary %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Middle name:</b>
+  <%= @user.middle_name %>
+</p>
+
+<p>
+  <b>First last name:</b>
+  <%= @user.first_last_name %>
+</p>
+
+<p>
+  <b>Second last name:</b>
+  <%= @user.second_last_name %>
+</p>
+
+<p>
+  <b>Identification card:</b>
+  <%= @user.identification_card %>
+</p>
+
+<p>
+  <b>Phone 1:</b>
+  <%= @user.phone_1 %>
+</p>
+
+<p>
+  <b>Phone 2:</b>
+  <%= @user.phone_2 %>
+</p>
+
+<p>
+  <b>Address 1:</b>
+  <%= @user.address_1 %>
+</p>
+
+<p>
+  <b>Address 2:</b>
+  <%= @user.address_2 %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @user.nationality %>
+</p>
+
+<p>
+  <b>Registration date:</b>
+  <%= @user.registration_date %>
+</p>
+
+<p>
+  <b>Inactivity date:</b>
+  <%= @user.inactivity_date %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @user.active %>
+</p>
+
+<p>
+  <b>Passport:</b>
+  <%= @user.passport %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

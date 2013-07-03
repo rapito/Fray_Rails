@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  start_time: 2013-07-02 23:51:44
+  end_time: 2013-07-02 23:51:44
+  day: MyString
+
+two:
+  id: 1
+  start_time: 2013-07-02 23:51:44
+  end_time: 2013-07-02 23:51:44
+  day: MyString

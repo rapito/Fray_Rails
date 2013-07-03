@@ -1,0 +1,97 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br />
+    <%= f.text_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type %>
+  </div>
+  <div class="field">
+    <%= f.label :enrollment_code %><br />
+    <%= f.text_field :enrollment_code %>
+  </div>
+  <div class="field">
+    <%= f.label :enrollment_outer_code %><br />
+    <%= f.text_field :enrollment_outer_code %>
+  </div>
+  <div class="field">
+    <%= f.label :studies %><br />
+    <%= f.text_field :studies %>
+  </div>
+  <div class="field">
+    <%= f.label :salary %><br />
+    <%= f.text_field :salary %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :middle_name %><br />
+    <%= f.text_field :middle_name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_last_name %><br />
+    <%= f.text_field :first_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :second_last_name %><br />
+    <%= f.text_field :second_last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :identification_card %><br />
+    <%= f.text_field :identification_card %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_1 %><br />
+    <%= f.text_field :phone_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_2 %><br />
+    <%= f.text_field :phone_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_1 %><br />
+    <%= f.text_field :address_1 %>
+  </div>
+  <div class="field">
+    <%= f.label :address_2 %><br />
+    <%= f.text_field :address_2 %>
+  </div>
+  <div class="field">
+    <%= f.label :nationality %><br />
+    <%= f.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= f.label :registration_date %><br />
+    <%= f.date_select :registration_date %>
+  </div>
+  <div class="field">
+    <%= f.label :inactivity_date %><br />
+    <%= f.date_select :inactivity_date %>
+  </div>
+  <div class="field">
+    <%= f.label :active %><br />
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :passport %><br />
+    <%= f.text_field :passport %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
