@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  cedula: MyString
+  telefono1: 1
+  telefono2: 1
+  direccion1: MyString
+  direccion2: MyString
+  nacionalidad: MyString
+  fecha_ingreso: 2013-06-25
+  fecha_inactivo: 2013-06-25
+  activo: 
+  pasaporte: MyString
+
+two:
+  primer_nombre: MyString
+  segundo_nombre: MyString
+  primer_apellido: MyString
+  segundo_apellido: MyString
+  cedula: MyString
+  telefono1: 1
+  telefono2: 1
+  direccion1: MyString
+  direccion2: MyString
+  nacionalidad: MyString
+  fecha_ingreso: 2013-06-25
+  fecha_inactivo: 2013-06-25
+  activo: 
+  pasaporte: MyString

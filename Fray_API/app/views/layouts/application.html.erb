@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fray Academic System</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+
+              <a class="brand" href="/">
+                Academic System Manager
+              </a>
+
+              <ul class="nav">
+                <li><a href="/estudiantes/new">Agregar Estudiante</a></li>
+                <li><a href="/tipos/new_grado">Agregar Grado</a></li>
+                <li><a href="/materia/new">Agregar Materia</a></li>
+                <li><a href="/profesors/new">Agregar Profesor</a></li>
+                <li><a href="/profesor_da_materia/new">Asignar Materia a Profesor</a></li>
+                <li><a href="/profesors">Profesores</a></li>
+
+
+              </ul>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+      <%if not @error.nil? %>
+          <div class="alert alert-error">@error</div>
+      <% else %>
+          <%if not @success.nil? %>
+              <div class="alert alert-success">@success</div>
+          <% end %>
+      <% end %>
+    </div>
+
+<%= yield %>
+
+</body>
+</html>
