@@ -4,7 +4,7 @@ class CreatePeriods < ActiveRecord::Migration
       t.integer :id
       t.date :init_date
       t.date :end_date
-      t.string :type
+      t.string :kind
 
       t.timestamps
     end

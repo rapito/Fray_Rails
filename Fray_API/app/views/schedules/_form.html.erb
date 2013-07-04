@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :start_time %><br />
     <%= f.time_select :start_time %>
   </div>
@@ -25,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :day %><br />
-    <%= f.text_field :day %>
+    <%= f.select :day , I18n.t('date.day_names') %>
   </div>
   <div class="actions">
     <%= f.submit %>

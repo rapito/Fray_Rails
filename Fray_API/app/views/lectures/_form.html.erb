@@ -12,8 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
+    <%= f.label :group_id %><br />
+    <%= f.select :group_id , Group.all.collect {|x| [x.name + '-' + x.suffix + ' : ' + x.stage.name, x.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule_id %><br />
+    <%= f.select :schedule_id , Schedule.all.collect {|x| [ I18n.l( x.start_time, :format => "%I.%m %p").to_s + ' - ' + I18n.l( x.end_time, :format => "%I.%m %p") ,x.id ]}%>
+  </div>
+  <div class="field">
+    <%= f.label :subject_id %><br />
+    <%= f.select :subject_id , Subject.all.collect{|x| [x.name ,x.id] } %>
+  </div>
+  <div class="field">
+    <%= f.label :teacher_id %><br />
+    <%= f.select :teacher_id , User.all.reject{|x| x.kind == I18n.t('fray.student').to_s }.collect {|x| [x.first_name + ' - ' + x.studies , x.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>

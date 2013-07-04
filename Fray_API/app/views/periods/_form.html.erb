@@ -12,10 +12,6 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :init_date %><br />
     <%= f.date_select :init_date %>
   </div>
@@ -24,8 +20,8 @@
     <%= f.date_select :end_date %>
   </div>
   <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+    <%= f.label :kind %><br />
+    <%= f.select :kind , [[I18n.t('fray.period_types.first').to_s,I18n.t('fray.period_types.first').to_s],[I18n.t('fray.period_types.second').to_s,I18n.t('fray.period_types.second').to_s]]%>
   </div>
   <div class="actions">
     <%= f.submit %>

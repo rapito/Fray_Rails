@@ -44,6 +44,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.7)
+    mysql2 (0.2.18)
     mysql2 (0.2.18-x86-mingw32)
     polyglot (0.3.3)
     rack (1.2.8)
@@ -59,6 +60,8 @@ GEM
       activesupport (= 3.0.20)
       bundler (~> 1.0)
       railties (= 3.0.20)
+    rails-i18n (0.7.3)
+      i18n (~> 0.5)
     railties (3.0.20)
       actionpack (= 3.0.20)
       activesupport (= 3.0.20)
@@ -81,3 +84,4 @@ DEPENDENCIES
   jbuilder
   mysql2 (~> 0.2.11)
   rails (= 3.0.20)
+  rails-i18n

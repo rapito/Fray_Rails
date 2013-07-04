@@ -11,13 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130703040443) do
+ActiveRecord::Schema.define(:version => 20130704041822) do
 
   create_table "grades", :force => true do |t|
     t.string   "comment"
     t.integer  "value"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "lecture_id"
+    t.integer  "student_id"
   end
 
   create_table "groups", :force => true do |t|
@@ -25,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20130703040443) do
     t.string   "suffix"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "period_id"
+    t.integer  "teacher_id"
+    t.integer  "stage_id"
   end
 
   create_table "institutions", :force => true do |t|
@@ -39,21 +44,27 @@ ActiveRecord::Schema.define(:version => 20130703040443) do
   create_table "lectures", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "group_id"
+    t.integer  "schedule_id"
+    t.integer  "subject_id"
+    t.integer  "teacher_id"
   end
 
   create_table "periods", :force => true do |t|
     t.date     "init_date"
     t.date     "end_date"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "records", :force => true do |t|
     t.string   "comment"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "student_id"
+    t.integer  "institution_id"
   end
 
   create_table "schedules", :force => true do |t|
@@ -74,6 +85,7 @@ ActiveRecord::Schema.define(:version => 20130703040443) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "stage_id"
   end
 
   create_table "tests", :force => true do |t|
@@ -83,7 +95,7 @@ ActiveRecord::Schema.define(:version => 20130703040443) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "type"
+    t.string   "kind"
     t.string   "enrollment_code"
     t.string   "enrollment_outer_code"
     t.string   "studies"

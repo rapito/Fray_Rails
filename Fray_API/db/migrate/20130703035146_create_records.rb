@@ -3,7 +3,7 @@ class CreateRecords < ActiveRecord::Migration
     create_table :records do |t|
       t.integer :id
       t.string :comment
-      t.string :type
+      t.string :kind
 
       t.timestamps
     end

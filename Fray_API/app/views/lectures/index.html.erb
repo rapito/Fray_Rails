@@ -3,6 +3,10 @@
 <table>
   <tr>
     <th>Id</th>
+    <th>Group</th>
+    <th>Schedule</th>
+    <th>Subject</th>
+    <th>Teacher</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +15,10 @@
 <% @lectures.each do |lecture| %>
   <tr>
     <td><%= lecture.id %></td>
+    <td><%= lecture.group_id %></td>
+    <td><%= lecture.schedule_id %></td>
+    <td><%= lecture.subject_id %></td>
+    <td><%= lecture.teacher_id %></td>
     <td><%= link_to 'Show', lecture %></td>
     <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
     <td><%= link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -12,12 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br />
-    <%= f.text_field :type %>
+    <%= f.label :kind %><br />
+    <%= f.select :kind , [ [I18n.t('fray.student').to_s],[I18n.t('fray.teacher').to_s] ]%>
   </div>
   <div class="field">
     <%= f.label :enrollment_code %><br />

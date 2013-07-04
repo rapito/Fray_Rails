@@ -5,6 +5,9 @@
     <th>Id</th>
     <th>Name</th>
     <th>Suffix</th>
+    <th>Period</th>
+    <th>Teacher</th>
+    <th>Stage</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +18,9 @@
     <td><%= group.id %></td>
     <td><%= group.name %></td>
     <td><%= group.suffix %></td>
+    <td><%= group.period_id %></td>
+    <td><%= group.teacher_id %></td>
+    <td><%= group.stage_id %></td>
     <td><%= link_to 'Show', group %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>

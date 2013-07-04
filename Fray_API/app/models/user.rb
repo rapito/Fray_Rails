@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   #Un profesor da varias clases
   has_many :lectures
   #Un profesor puede dar varias materias
-  has_and_belongs_to_many :subjects
+  has_and_belongs_to_many :subjects ,:autosave => true
   #Un profesor es encargado de una sección
   has_one :group
 

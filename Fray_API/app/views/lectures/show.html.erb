@@ -5,6 +5,26 @@
   <%= @lecture.id %>
 </p>
 
+<p>
+  <b>Group:</b>
+  <%= @lecture.group_id %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @lecture.schedule_id %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%= @lecture.subject_id %>
+</p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @lecture.teacher_id %>
+</p>
+
 
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
 <%= link_to 'Back', lectures_path %>

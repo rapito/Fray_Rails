@@ -2,7 +2,7 @@ class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.integer :id
-      t.string :type
+      t.string :kind
       t.string :enrollment_code
       t.string :enrollment_outer_code
       t.string :studies
