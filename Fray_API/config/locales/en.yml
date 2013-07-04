@@ -1,10 +1,25 @@
 en:
   fray:
+    title: Fray Ramón Pané
+    subtitle: Academic System Management
+    menu_title: Management
     student: STUDENT
     teacher: TEACHER
+    lecture_assignments:
+           - Practice
+           - Class Assignments
+           - Partial Test
+           - MidTerm
+           - Final
+           - Proyect
+    record_types:
+           - Medical
+           - Achievements
+           - Academic
     period_types:
       first:  FIRST SEMESTER
       second: SECOND SEMESTER
+
 
   date:
     abbr_day_names:

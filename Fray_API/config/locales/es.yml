@@ -2,6 +2,17 @@ es:
   fray:
     student: ESTUDIANTE
     teacher: PROFESOR
+    lecture_assignments:
+               - Practice
+               - Class Assignments
+               - Partial Test
+               - MidTerm
+               - Final
+               - Proyect
+    record_types:
+           - Medical
+           - Achievements
+           - Academic
     period_types:
       first:  PRIMER SEMESTRE
       second: SEGUNDO SEMESTRE

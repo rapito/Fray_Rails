@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Id</th>
+    <th>Lecture</th>
+    <th>Student</th>
     <th>Comment</th>
     <th>Value</th>
     <th></th>
@@ -13,6 +15,8 @@
 <% @grades.each do |grade| %>
   <tr>
     <td><%= grade.id %></td>
+    <td><%= grade.lecture_id %></td>
+    <td><%= grade.student_id %></td>
     <td><%= grade.comment %></td>
     <td><%= grade.value %></td>
     <td><%= link_to 'Show', grade %></td>

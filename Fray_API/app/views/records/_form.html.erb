@@ -12,16 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :id %><br />
-    <%= f.text_field :id %>
-  </div>
-  <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_field :comment %>
   </div>
   <div class="field">
     <%= f.label :kind %><br />
-    <%= f.text_field :kind %>
+    <%= f.select :kind , I18n.t('fray.record_types') %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %><br />
+    <%= f.select :student_id , User.all.reject{|x| x.kind == I18n.t('fray.teacher')}.collect {|x| [x.first_name + ' ' + x.first_last_name + ' - ' + x.enrollment_code,x.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :institution_id %><br />
+    <%= f.select :institution_id , Institution.all.collect {|x| [x.name,x.id]} %>
   </div>
   <div class="actions">
     <%= f.submit %>
