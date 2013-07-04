@@ -1,8 +1,7 @@
-<h1>Listing subjects</h1>
+<h1>Subjects</h1>
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Name</th>
     <th>Stage</th>
     <th></th>
@@ -12,16 +11,14 @@
 
 <% @subjects.each do |subject| %>
   <tr>
-    <td><%= subject.id %></td>
     <td><%= subject.name %></td>
-    <td><%= subject.stage_id %></td>
-    <td><%= link_to 'Show', subject %></td>
-    <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-    <td><%= link_to 'Destroy', subject, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= subject.stage.name %></td>
+    <!--<td><%# link_to 'Show', subject %></td>-->
+    <!--<td><%# link_to 'Edit', edit_subject_path(subject) %></td>-->
+    <!--<td><%# link_to 'Destroy', subject, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Subject', new_subject_path %>

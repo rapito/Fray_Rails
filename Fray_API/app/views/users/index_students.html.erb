@@ -1,0 +1,38 @@
+<h1>Students</h1>
+
+<table class="table table-striped table-hover table-condensed">
+  <tr>
+    <th>Enrollment code</th>
+    <th>First name</th>
+    <th>First last name</th>
+    <th>Phone 1</th>
+    <th>Address 1</th>
+    <th>Nationality</th>
+    <th>Registration date</th>
+    <th>Inactivity date</th>
+    <th>Active</th>
+    <!--<th></th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.enrollment_code %></td>
+    <td><%= user.first_name %></td>
+    <td><%= user.first_last_name %></td>
+    <td><%= user.phone_1 %></td>
+    <td><%= user.address_1 %></td>
+    <td><%= user.nationality %></td>
+    <td><%= user.registration_date %></td>
+    <td><%= user.inactivity_date %></td>
+    <td><%= user.active %></td>
+    <!--<td><%# link_to 'Show', user %></td>-->
+    <!--<td><%# link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete %></td>-->
+    <!--<td><%# link_to 'Edit', edit_user_path(user) %></td>-->
+  </tr>
+<% end %>
+</table>
+
+<br />
+

@@ -1,31 +1,29 @@
-<h1>Listing lectures</h1>
+<h1>Lectures</h1>
 
 <table>
   <tr>
-    <th>Id</th>
     <th>Group</th>
     <th>Schedule</th>
     <th>Subject</th>
     <th>Teacher</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <!--<th></th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
   </tr>
 
 <% @lectures.each do |lecture| %>
   <tr>
-    <td><%= lecture.id %></td>
-    <td><%= lecture.group_id %></td>
-    <td><%= lecture.schedule_id %></td>
-    <td><%= lecture.subject_id %></td>
-    <td><%= lecture.teacher_id %></td>
-    <td><%= link_to 'Show', lecture %></td>
-    <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
-    <td><%= link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= lecture.group.name %></td>
+    <td><%= I18n.l( lecture.schedule.start_time, :format => "%I.%m %P").to_s + ' - ' + I18n.l( lecture.schedule.end_time, :format => "%I.%m %p") %></td>
+    <td><%= lecture.subject.name %></td>
+    <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
+    <!--<td><%# link_to 'Show', lecture %></td>-->
+    <!--<td><%# link_to 'Edit', edit_lecture_path(lecture) %></td>-->
+    <!--<td><%# link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Lecture', new_lecture_path %>
+<!--<%# link_to 'New Lecture', new_lecture_path %>-->

@@ -20,10 +20,13 @@ FrayAcademicSystem::Application.routes.draw do
   resources :institutions
 
   resources :materia
-  get "tipos/new_grado", to: "tipos#new_grado"
+
   resources :tipos
 
   resources :tests
+
+  get "students", to: "users#index_students"
+  get "teachers", to: "users#index_teachers"
 
   get "welcome/index"
   root to: "welcome#index"

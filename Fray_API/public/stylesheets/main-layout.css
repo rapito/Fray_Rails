@@ -54,3 +54,27 @@ body
     opacity: 0.05;
     z-index: 0;
 }
+
+.yield_container
+{
+    width: 100%;
+    text-align: center;
+}
+
+.yield_box
+{
+
+    margin: 25px;
+    padding: 15px 40px;
+    text-align: left;
+
+    width: 920px;
+
+
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.31);
+    z-index: 5;
+
+}

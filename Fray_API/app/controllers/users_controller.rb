@@ -10,6 +10,28 @@ class UsersController < ApplicationController
     end
   end
 
+  # GET /students
+  # GET /students.json
+  def index_students
+    @users = User.all.reject{|x| x.kind == I18n.t('fray.teacher')}
+
+    respond_to do |format|
+      format.html # index_students.html.erb
+      format.json  { render :json => @users }
+    end
+  end
+
+  # GET /teachers
+  # GET /teachers.json
+  def index_teachers
+    @users = User.all.reject{|x| x.kind == I18n.t('fray.student')}
+
+    respond_to do |format|
+      format.html # index_teachers.html.erb
+      format.json  { render :json => @users }
+    end
+  end
+
   # GET /users/1
   # GET /users/1.xml
   def show

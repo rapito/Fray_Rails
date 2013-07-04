@@ -4,6 +4,8 @@
   <title>Fray Academic System</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "bootstrap.js" %>
+  <%= javascript_include_tag "main.js" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -43,81 +45,43 @@
 
         <div class="btn-toolbar" style="margin: 0;">
           <div class="btn-group">
-            <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown"> <%= I18n.t('fray.buttons.reports').to_s  %> <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><%= link_to I18n.t('fray.buttons.groups').to_s , groups_path %></li>
+              <li><%= link_to I18n.t('fray.buttons.lectures').to_s , lectures_path %></li>
+              <li><%= link_to I18n.t('fray.buttons.students').to_s , 'students' %></li>
+              <li><%= link_to I18n.t('fray.buttons.teachers').to_s , 'teachers' %></li>
               <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><%= link_to I18n.t('fray.buttons.subjects_catalog').to_s , subjects_path %></li>
             </ul>
-          </div><!-- /btn-group -->
+          </div>
+
           <div class="btn-group">
-            <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown"> <%= I18n.t('fray.buttons.manage').to_s  %> <span class="caret"></span></button>
             <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.groups').to_s  %></a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.lectures').to_s  %></a></li>
+              <li><%= link_to I18n.t('fray.buttons.teachers').to_s, 'users/'  %></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.subjects').to_s  %></a></li>
               <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.institutions').to_s  %></a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.stages').to_s  %></a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.periods').to_s  %></a></li>
+              <li><a href="#"><%= I18n.t('fray.buttons.schedules').to_s  %></a></li>
             </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div><!-- /btn-group -->
-          <div class="btn-group">
-            <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Inverse <span class="caret"></span></button>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
-          </div><!-- /btn-group -->
+          </div>
+
         </div>
 
       </div>
     </div>
 
-<%= yield %>
+    <div class="yield_container">
+      <div class="yield_box">
+        <%= yield %>
+      </div>
+    </div>
 
 </body>
 </html>
