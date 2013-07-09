@@ -1,35 +1,27 @@
 <p id="notice"><%= notice %></p>
+<h1><%= I18n.t('fray.models.group') + ' ' + @group.name %></h1>
 
-<p>
-  <b>Id:</b>
-  <%= @group.id %>
-</p>
-
-<p>
-  <b>Name:</b>
-  <%= @group.name %>
-</p>
-
-<p>
+<div class="field">
   <b>Suffix:</b>
   <%= @group.suffix %>
-</p>
+</div>
 
-<p>
+<div class="field">
   <b>Period:</b>
-  <%= @group.period_id %>
-</p>
+  <%= @group.period.init_date.to_formatted_s(:long)  + ' - ' + @group.period.end_date.to_formatted_s(:long) %>
+</div>
 
-<p>
+<div class="field">
   <b>Teacher:</b>
-  <%= @group.teacher_id %>
-</p>
+  <%= @group.teacher.first_name + ' ' + @group.teacher.first_last_name  %>
+</div>
 
-<p>
+<div class="field">
   <b>Stage:</b>
-  <%= @group.stage_id %>
-</p>
+  <%= @group.stage.name %>
+</div>
 
 
+<br /><br />
 <%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<%= link_to 'Back',  '/groups/manage'  %>

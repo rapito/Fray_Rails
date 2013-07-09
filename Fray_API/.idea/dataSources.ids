@@ -3224,187 +3224,129 @@
     <schema name="" catalog="mysql"/>
     <schema name="" catalog="performance_schema"/>
     <schema name="" catalog="phpmyadmin"/>
-    <schema name="" catalog="ruby"/>
     <schema name="" catalog="todavia"/>
     <schema name="" catalog="todaviado"/>
     <schema name="" catalog="toki"/>
     <schema name="" catalog="twitter_clone"/>
-    <table name="calificacion" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="CLASE_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="ESTUDIANTE_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="COMENTARIO" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
-      <column name="NOTA" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,CLASE_ID,ESTUDIANTE_ID"/>
-      <foreign-key name="fk_CALIFICACION_CLASE1" columns="CLASE_ID" ref-table="clase" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_CALIFICACION_ESTUDIANTE1" columns="ESTUDIANTE_ID" ref-table="estudiante" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    <table name="grades" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="comment" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="value" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="lecture_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="student_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="clase" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="SECCION_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="PROFESOR_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="HORARIO_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="MATERIA_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,SECCION_ID,PROFESOR_ID,HORARIO_ID,MATERIA_ID"/>
-      <foreign-key name="fk_CLASE_CATALOGO_MATERIAS1" columns="MATERIA_ID" ref-table="materia" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_CLASE_HORARIO1" columns="HORARIO_ID" ref-table="horario" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_CLASE_PROFESOR1" columns="PROFESOR_ID" ref-table="profesor" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_CLASE_SECCION1" columns="SECCION_ID" ref-table="seccion" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CALIFICACION_CLASE1" table="calificacion" schema="" catalog="fray" columns="CLASE_ID"/>
-      <exported-key name="fk_CLASE_has_ESTUDIANTE_CLASE" table="clase_estudiante" schema="" catalog="fray" columns="CLASE_ID"/>
-      <index name="fk_CLASE_HORARIO1_idx" unique="false" columns="HORARIO_ID"/>
-      <index name="fk_CLASE_CATALOGO_MATERIAS1_idx" unique="false" columns="MATERIA_ID"/>
+    <table name="groups" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="suffix" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="period_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="teacher_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="stage_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="clase_estudiante" schema="" catalog="fray" type="TABLE">
-      <column name="CLASE_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="ESTUDIANTE_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="APROBADO" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="CLASE_ID,ESTUDIANTE_ID"/>
-      <foreign-key name="fk_CLASE_has_ESTUDIANTE_CLASE" columns="CLASE_ID" ref-table="clase" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_CLASE_has_ESTUDIANTE_ESTUDIANTE1" columns="ESTUDIANTE_ID" ref-table="estudiante" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    <table name="institutions" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="country" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="estudiante" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="MATRICULA" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="MATRICULA_EXTERNA" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="PERSONA_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,PERSONA_ID"/>
-      <foreign-key name="fk_ESTUDIANTE_PERSONA1" columns="PERSONA_ID" ref-table="persona" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CALIFICACION_ESTUDIANTE1" table="calificacion" schema="" catalog="fray" columns="ESTUDIANTE_ID"/>
-      <exported-key name="fk_CLASE_has_ESTUDIANTE_ESTUDIANTE1" table="clase_estudiante" schema="" catalog="fray" columns="ESTUDIANTE_ID"/>
-      <exported-key name="fk_HISTORIAL_ESTUDIANTE1" table="historial" schema="" catalog="fray" columns="ESTUDIANTE_ID"/>
-      <index name="MATRICULA_UNIQUE" unique="true" columns="MATRICULA"/>
+    <table name="lectures" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="group_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="schedule_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="subject_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="teacher_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="historial" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="COMENTARIO" sqlType="VARCHAR" length="1000" precision="0" nullable="true" jdbcType="12"/>
-      <column name="ESTUDIANTE_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="INSTITUCION_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="TIPO_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" remarks="CgpUaXBvIGRlIEhpc3RvcmlhbAptZWRpY28KZXNjb2xhcgpmYW1pbGlhcgpldGMuLgo="/>
-      <primary-key name="PRIMARY" columns="ID,TIPO_ID"/>
-      <foreign-key name="fk_HISTORIAL_ESTUDIANTE1" columns="ESTUDIANTE_ID" ref-table="estudiante" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_HISTORIAL_INSTITUCION1" columns="INSTITUCION_ID" ref-table="institucion" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_HISTORIAL_TIPO1" columns="TIPO_ID" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
+    <table name="periods" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="init_date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
+      <column name="end_date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
+      <column name="kind" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="horario" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="HORA_INICIO" sqlType="TIME" length="8" precision="0" nullable="false" jdbcType="92"/>
-      <column name="HORA_FIN" sqlType="TIME" length="8" precision="0" nullable="false" jdbcType="92"/>
-      <column name="TIPO_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" remarks="CgpFTlVNIERFIExPUyBESUFTCgpMVU5FUwpNQVJURVMK"/>
-      <primary-key name="PRIMARY" columns="ID,TIPO_ID"/>
-      <foreign-key name="fk_HORARIO_TIPO1" columns="TIPO_ID" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CLASE_HORARIO1" table="clase" schema="" catalog="fray" columns="HORARIO_ID"/>
+    <table name="records" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="comment" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="kind" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="student_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="institution_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="institucion" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="NOMBRE" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
-      <column name="DIRECCION" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
-      <column name="TELEFONO" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="PAIS" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="CIUDAD" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <exported-key name="fk_HISTORIAL_INSTITUCION1" table="historial" schema="" catalog="fray" columns="INSTITUCION_ID"/>
-      <index name="ID_UNIQUE" unique="true" columns="ID"/>
+    <table name="schedules" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="start_time" sqlType="TIME" length="8" precision="0" nullable="true" jdbcType="92"/>
+      <column name="end_time" sqlType="TIME" length="8" precision="0" nullable="true" jdbcType="92"/>
+      <column name="day" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="materia" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="TIPO_ID_NOMBRE_MATERIA" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" remarks="TUFURU1BVElDQSAzCk1BVEVNQVRJQ0EgMQpFU1BBTk9MIDI="/>
-      <column name="TIPO_ID_ANO_ACADEMMICA" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,TIPO_ID_NOMBRE_MATERIA,TIPO_ID_ANO_ACADEMMICA"/>
-      <foreign-key name="fk_MATERIA_TIPO1" columns="TIPO_ID_NOMBRE_MATERIA" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_MATERIA_TIPO2" columns="TIPO_ID_ANO_ACADEMMICA" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CLASE_CATALOGO_MATERIAS1" table="clase" schema="" catalog="fray" columns="MATERIA_ID"/>
-      <exported-key name="fk_PROFESOR_has_MATERIA_MATERIA1" table="profesor_da_materia" schema="" catalog="fray" columns="MATERIA_ID"/>
-      <index name="ID_UNIQUE" unique="true" columns="ID"/>
-      <index name="fk_MATERIA_TIPO1_idx" unique="false" columns="TIPO_ID_NOMBRE_MATERIA"/>
-      <index name="fk_MATERIA_TIPO2_idx" unique="false" columns="TIPO_ID_ANO_ACADEMMICA"/>
+    <table name="schema_migrations" schema="" catalog="fray" type="TABLE">
+      <column name="version" sqlType="VARCHAR" length="255" precision="0" nullable="false" jdbcType="12"/>
+      <index name="unique_schema_migrations" unique="true" columns="version"/>
     </table>
-    <table name="pagos" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="FECHA_PAGO" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
-      <column name="MONTO" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <exported-key name="fk_PERSONA_PAGOS1" table="persona" schema="" catalog="fray" columns="PAGOS_ID"/>
+    <table name="stages" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="periodo_academico" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="FECHA_INICIAL" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
-      <column name="FECHA_FINAL" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
-      <column name="TIPO_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" remarks="RU5VTQpQUklNRVIgU0VNRVNUUkUKU0VHVU5ETyBTRU1FU1RSRQ=="/>
-      <primary-key name="PRIMARY" columns="ID,TIPO_ID"/>
-      <foreign-key name="fk_PERIODO_ACADEMICO_TIPO1" columns="TIPO_ID" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_SECCION_ANO_ACADEMICO1" table="seccion" schema="" catalog="fray" columns="PERIODO_ACADEMICO_ID"/>
-      <index name="fk_PERIODO_ACADEMICO_TIPO1_idx" unique="false" columns="TIPO_ID"/>
+    <table name="subjects" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="stage_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="persona" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="PRIMER_NOMBRE" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
-      <column name="SEGUNDO_NOMBRE" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="PRIMER_APELLIDO" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
-      <column name="SEGUNDO_APELLIDO" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="CEDULA" sqlType="VARCHAR" length="11" precision="0" nullable="true" jdbcType="12"/>
-      <column name="TELEFONO1" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="TELEFONO2" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <column name="DIRECCION1" sqlType="VARCHAR" length="500" precision="0" nullable="false" jdbcType="12"/>
-      <column name="DIRECCION2" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="NACIONALIDAD" sqlType="VARCHAR" length="45" precision="0" nullable="false" jdbcType="12"/>
-      <column name="FECHA_INGRESO" sqlType="DATE" length="10" precision="0" nullable="false" jdbcType="91"/>
-      <column name="FECHA_INACTIVO" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
-      <column name="ACTIVO" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="PASAPORTE" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="PAGOS_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,PAGOS_ID"/>
-      <foreign-key name="fk_PERSONA_PAGOS1" columns="PAGOS_ID" ref-table="pagos" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_ESTUDIANTE_PERSONA1" table="estudiante" schema="" catalog="fray" columns="PERSONA_ID"/>
-      <exported-key name="fk_PROFESOR_PERSONA1" table="profesor" schema="" catalog="fray" columns="PERSONA_ID"/>
-      <index name="ID_UNIQUE" unique="true" columns="ID"/>
-      <index name="CEDULA_UNIQUE" unique="true" columns="CEDULA"/>
-      <index name="PASAPORTE_UNIQUE" unique="true" columns="PASAPORTE"/>
+    <table name="tests" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
-    <table name="profesor" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="FORMACION" sqlType="VARCHAR" length="500" precision="0" nullable="true" jdbcType="12"/>
-      <column name="SALARIO" sqlType="FLOAT" length="12" precision="0" nullable="true" jdbcType="7"/>
-      <column name="PERSONA_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID,PERSONA_ID"/>
-      <foreign-key name="fk_PROFESOR_PERSONA1" columns="PERSONA_ID" ref-table="persona" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CLASE_PROFESOR1" table="clase" schema="" catalog="fray" columns="PROFESOR_ID"/>
-      <exported-key name="fk_PROFESOR_has_MATERIA_PROFESOR1" table="profesor_da_materia" schema="" catalog="fray" columns="PROFESOR_ID"/>
-      <exported-key name="fk_SECCION_PROFESOR1" table="seccion" schema="" catalog="fray" columns="PROFESOR_ID"/>
-    </table>
-    <table name="profesor_da_materia" schema="" catalog="fray" type="TABLE">
-      <column name="PROFESOR_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="MATERIA_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="PROFESOR_ID,MATERIA_ID"/>
-      <foreign-key name="fk_PROFESOR_has_MATERIA_MATERIA1" columns="MATERIA_ID" ref-table="materia" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_PROFESOR_has_MATERIA_PROFESOR1" columns="PROFESOR_ID" ref-table="profesor" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <index name="fk_PROFESOR_has_MATERIA_MATERIA1_idx" unique="false" columns="MATERIA_ID"/>
-      <index name="fk_PROFESOR_has_MATERIA_PROFESOR1_idx" unique="false" columns="PROFESOR_ID"/>
-    </table>
-    <table name="seccion" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="NOMBRE" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="POSTFIJO" sqlType="VARCHAR" length="1" precision="0" nullable="true" jdbcType="12"/>
-      <column name="PERIODO_ACADEMICO_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="PROFESOR_ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
-      <column name="TIPO_ID_ANO_ACADEMICO" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" remarks="CkVOVU0gOiBBTk9fQUNBREVNSUNPCgpwcmltZXJvIGRlIGJhY2hpbGxlcgpzZXB0aW1vIGRlIGJhc2ljYQpwcmltZXJvIGRlIGJhc2ljYQoK"/>
-      <primary-key name="PRIMARY" columns="ID,PERIODO_ACADEMICO_ID,TIPO_ID_ANO_ACADEMICO"/>
-      <foreign-key name="fk_SECCION_ANO_ACADEMICO1" columns="PERIODO_ACADEMICO_ID" ref-table="periodo_academico" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_SECCION_PROFESOR1" columns="PROFESOR_ID" ref-table="profesor" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <foreign-key name="fk_SECCION_TIPO1" columns="TIPO_ID_ANO_ACADEMICO" ref-table="tipo" ref-schema="" ref-catalog="fray" ref-columns="ID" update-rule="3" delete-rule="3" deferrability="2"/>
-      <exported-key name="fk_CLASE_SECCION1" table="clase" schema="" catalog="fray" columns="SECCION_ID"/>
-    </table>
-    <table name="tipo" schema="" catalog="fray" type="TABLE">
-      <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="NOMBRE" sqlType="VARCHAR" length="45" precision="0" nullable="true" jdbcType="12"/>
-      <column name="CATEGORIA" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="ID"/>
-      <exported-key name="fk_HISTORIAL_TIPO1" table="historial" schema="" catalog="fray" columns="TIPO_ID"/>
-      <exported-key name="fk_HORARIO_TIPO1" table="horario" schema="" catalog="fray" columns="TIPO_ID"/>
-      <exported-key name="fk_MATERIA_TIPO1" table="materia" schema="" catalog="fray" columns="TIPO_ID_NOMBRE_MATERIA"/>
-      <exported-key name="fk_MATERIA_TIPO2" table="materia" schema="" catalog="fray" columns="TIPO_ID_ANO_ACADEMMICA"/>
-      <exported-key name="fk_PERIODO_ACADEMICO_TIPO1" table="periodo_academico" schema="" catalog="fray" columns="TIPO_ID"/>
-      <exported-key name="fk_SECCION_TIPO1" table="seccion" schema="" catalog="fray" columns="TIPO_ID_ANO_ACADEMICO"/>
+    <table name="users" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="kind" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="enrollment_code" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="enrollment_outer_code" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="studies" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="salary" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="first_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="middle_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="first_last_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="second_last_name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="identification_card" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="phone_1" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="phone_2" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="address_1" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="address_2" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="nationality" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="registration_date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
+      <column name="inactivity_date" sqlType="DATE" length="10" precision="0" nullable="true" jdbcType="91"/>
+      <column name="active" sqlType="BIT" length="0" precision="0" nullable="true" jdbcType="-7"/>
+      <column name="passport" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="ad" schema="" catalog="imegold_db" type="TABLE">
       <column name="ID" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

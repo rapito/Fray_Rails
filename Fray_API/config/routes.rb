@@ -1,4 +1,17 @@
 FrayAcademicSystem::Application.routes.draw do
+
+  get "grades/manage", to: "grades#manage"
+
+  get "groups/manage", to: "groups#manage"
+  get "lectures/manage", to: "lectures#manage"
+  #get "teachers/manage", to: "users#manage_teachers"
+  #get "students/manage", to: "users#manage_students"
+  get "subjects/manage", to: "subjects#manage"
+  get "institutions/manage", to: "institutions#manage"
+  get "stages/manage", to: "stages#manage"
+  get "periods/manage", to: "periods#manage"
+  get "schedules/manage", to: "schedules#manage"
+
   resources :lectures
 
   resources :records
@@ -25,8 +38,13 @@ FrayAcademicSystem::Application.routes.draw do
 
   resources :tests
 
-  get "students", to: "users#index_students"
-  get "teachers", to: "users#index_teachers"
+  resources :teachers
+
+  resources :students
+
+  #get "students", to: "users#index_students"
+  #get "teachers", to: "users#index_teachers"
+
 
   get "welcome/index"
   root to: "welcome#index"

@@ -1,0 +1,36 @@
+<h1>Groups</h1>
+<a href="<%= new_group_path %>" style="float: right;" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></a>
+<br /><br />
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Suffix</th>
+    <th>Period</th>
+    <th>Teacher</th>
+    <th>Stage</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @groups.each do |group| %>
+  <tr>
+    <td><%= group.name %></td>
+    <td><%= group.suffix %></td>
+    <td><%= group.period.init_date.to_formatted_s(:long)  + ' - ' + group.period.end_date.to_formatted_s(:long) %></td>
+    <td><%= group.teacher.first_name + ' ' + group.teacher.first_last_name %></td>
+    <td><%= group.stage.name %></td>
+    <td><%= link_to 'Show', group %></td>
+    <td><%= link_to 'Edit', edit_group_path(group) %></td>
+    <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<% if @groups.length > 5  %>
+    <button style="float: right;" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></button>
+<% end %>
+
+<br />
+

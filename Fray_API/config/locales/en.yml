@@ -1,16 +1,40 @@
 en:
   fray:
+
     title: Fray Ramón Pané
     subtitle: Academic System Management
     menu_title: Management
+
     welcome:
       title: Welcome to the School's ASM Web Application
       content: This is the Web Application ASM Prototype for Fray Ramón Pané's School. Try out the buttons above to check the basic early functionality of the system. Check out the Reports button group to see the basic reports pages. Don't forget the Management button group, where you will find access to setting up lectures and student groups.
+
     student: STUDENT
     teacher: TEACHER
+
+    actions:
+      set_grades: Set Grades
+      choose_group: Choose a Group
+
+
+    models:
+      grades: Grades
+      group: Group
+      lecture: Lecture
+      student: Student
+      teacher: Teacher
+      subject: Subject
+      schedule: Schedule
+      institution: Institution
+      period: Academic Period
+      stage: Academic Stage
+
     buttons:
       reports: Reports
       manage: Management
+      set_grades: Set grades
+
+      add_new: Add New
 
       groups: Groups
       lectures: Lectures
