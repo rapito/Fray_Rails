@@ -1,6 +1,10 @@
 FrayAcademicSystem::Application.routes.draw do
 
   get "grades/manage", to: "grades#manage"
+  get "grades/manage/:id", to: "grades#manage"
+  get "grades/manage/:id/:lecture_id", to: "grades#manage"
+
+  get "grades/new/:student_id/:lecture_id", to: "grades#new_with_student"
 
   get "groups/manage", to: "groups#manage"
   get "lectures/manage", to: "lectures#manage"

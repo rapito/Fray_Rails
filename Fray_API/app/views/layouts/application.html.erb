@@ -50,8 +50,8 @@
             <ul class="dropdown-menu">
               <li><%= link_to I18n.t('fray.buttons.groups').to_s , groups_path %></li>
               <li><%= link_to I18n.t('fray.buttons.lectures').to_s , lectures_path %></li>
-              <li><%= link_to I18n.t('fray.buttons.students').to_s , 'students' %></li>
-              <li><%= link_to I18n.t('fray.buttons.teachers').to_s , 'teachers' %></li>
+              <li><%= link_to I18n.t('fray.buttons.students').to_s , '/students' %></li>
+              <li><%= link_to I18n.t('fray.buttons.teachers').to_s , '/teachers' %></li>
               <li class="divider"></li>
               <li><%= link_to I18n.t('fray.buttons.subjects_catalog').to_s , subjects_path %></li>
             </ul>
@@ -62,8 +62,8 @@
             <ul class="dropdown-menu">
               <li><a href="/groups/manage"><%= I18n.t('fray.buttons.groups').to_s  %></a></li>
               <li><a href="/lectures/manage"><%= I18n.t('fray.buttons.lectures').to_s  %></a></li>
-              <li><a href="/teachers/manage"><%= I18n.t('fray.buttons.teachers').to_s  %></a></li>
-              <li><a href="/students/manage"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
+              <li><a href="/teachers"><%= I18n.t('fray.buttons.teachers').to_s  %></a></li>
+              <li><a href="/students"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
               <li><a href="/subjects/manage"><%= I18n.t('fray.buttons.subjects').to_s  %></a></li>
               <li class="divider"></li>
               <li><a href="/institutions/manage"><%= I18n.t('fray.buttons.institutions').to_s  %></a></li>
@@ -73,7 +73,7 @@
             </ul>
           </div>
 
-          <%= link_to I18n.t('fray.buttons.set_grades') , grades_path %>
+          <%= link_to I18n.t('fray.buttons.set_grades') , '/grades/manage' %>
         </div>
 
       </div>

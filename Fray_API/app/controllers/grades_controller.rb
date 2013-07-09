@@ -13,13 +13,39 @@ class GradesController < ApplicationController
   # GET /grades/manage
   # GET /grades/manage.json
   def manage
+    @groups = Group.all
     @grades = Grade.all
+
+    begin
+      @group = Group.find(params[:id])
+      @lectures = @group.lectures
+    rescue
+
+    end
+
+    begin
+
+      @lecture = Lecture.find(params[:lecture_id])
+
+      @students = []
+      Student.all.each do |s|
+        s.lectures.each do |l|
+          if(l.id == @lecture.id)
+            @students.push s
+          end
+        end
+      end
+
+    rescue
+
+    end
 
     respond_to do |format|
       format.html # index.html.erb
       format.json  { render :json => @grades }
     end
   end
+
 
   # GET /grades/1
   # GET /grades/1.json
@@ -36,6 +62,16 @@ class GradesController < ApplicationController
   # GET /grades/new.json
   def new
     @grade = Grade.new
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json  { render :json => @grade }
+    end
+  end
+
+  def new_with_student
+    @grade = Grade.new
+
 
     respond_to do |format|
       format.html # new.html.erb

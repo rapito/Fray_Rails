@@ -18,8 +18,8 @@
   <tr>
     <td><%= group.name %></td>
     <td><%= group.suffix %></td>
-    <td><%= group.period.init_date.to_formatted_s(:long)  + ' - ' + group.period.end_date.to_formatted_s(:long) %></td>
-    <td><%= group.teacher.first_name + ' ' + group.teacher.first_last_name %></td>
+    <td><%= group_get_period group %></td>
+    <td><%= user_get_name group.teacher %></td>
     <td><%= group.stage.name %></td>
     <td><%= link_to 'Show', group %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>

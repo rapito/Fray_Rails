@@ -3,30 +3,74 @@
 
 <table>
   <tr>
-    <th>Id</th>
-    <th>Lecture</th>
-    <th>Student</th>
-    <th>Comment</th>
-    <th>Value</th>
-    <th></th>
-    <th></th>
+    <th>Name</th>
+    <th>Suffix</th>
+    <th>Period</th>
+    <th>Teacher</th>
+    <th>Stage</th>
     <th></th>
   </tr>
 
-<% @grades.each do |grade| %>
-  <tr>
-    <td><%= grade.id %></td>
-    <td><%= grade.lecture.subject.name %></td>
-    <td><%= grade.student.first_name %></td>
-    <td><%= grade.comment %></td>
-    <td><%= grade.value %></td>
-    <td><%= link_to 'Show', grade %></td>
-    <td><%= link_to 'Edit', edit_grade_path(grade) %></td>
-    <td><%= link_to 'Destroy', grade, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
+  <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.name %></td>
+        <td><%= group.suffix %></td>
+        <td><%= group_get_period group %></td>
+        <td><%= user_get_name group.teacher %></td>
+        <td><%= group.stage.name %></td>
+        <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.group') , '/grades/manage/'+group.id.to_s %></td>
+      </tr>
+  <% end %>
+
+
 </table>
 
 <br />
 
-<%= link_to 'New Grade', new_grade_path %>
+<% if @lectures %>
+
+    <h2/><%=  I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.lecture') %></h2>
+
+    <table>
+      <tr>
+        <th>Group</th>
+        <th>Schedule</th>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <!--<th></th>-->
+
+      </tr>
+
+      <% @lectures.each do |lecture| %>
+          <tr>
+            <td><%= lecture.group.name %></td>
+            <td><%= lecture.schedule.day + ', ' + I18n.l( lecture.schedule.start_time, :format => "%I.%m %P").to_s + ' - ' + I18n.l( lecture.schedule.end_time, :format => "%I.%m %p") %></td>
+            <td><%= lecture.subject.name %></td>
+            <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
+            <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.lecture') , '/grades/manage/'+@group.id.to_s+'/'+lecture.id.to_s %></td>
+
+          </tr>
+      <% end %>
+    </table>
+
+<% end %>
+
+<% if @students %>
+    <h2/><%=  I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') %></h2>
+
+    <table class="table table-striped table-hover table-condensed">
+      <tr>
+        <th>Enrollment code</th>
+        <th>Name</th>
+        <!--<th></th>-->
+      </tr>
+
+      <% @students.each do |student| %>
+          <tr>
+            <td><%= student.enrollment_code %></td>
+            <td><%= user_get_name student %></td>
+            <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') , '/grades/new/'+student.id.to_s+'/'+@lecture.id.to_s %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>

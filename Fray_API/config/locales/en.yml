@@ -18,6 +18,7 @@ en:
 
 
     models:
+      grade: Grade
       grades: Grades
       group: Group
       lecture: Lecture
@@ -35,6 +36,7 @@ en:
       set_grades: Set grades
 
       add_new: Add New
+      select: Select
 
       groups: Groups
       lectures: Lectures

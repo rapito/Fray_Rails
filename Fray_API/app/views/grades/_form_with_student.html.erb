@@ -1,0 +1,33 @@
+<%= form_for(@grade) do |f| %>
+  <% if @grade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+      <ul>
+      <% @grade.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :lecture_id %><br />
+    <%= f.select :lecture_id , Lecture.all.collect {|x| [x.subject.name + ' - ' +x.group.name,x.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :student_id %><br />
+    <%= f.select :student_id , User.all.reject{|x| x.kind == I18n.t('fray.teacher').to_s }.collect {|x| [x.first_name + ' ' + x.first_last_name, x.id]} %>
+  </div>
+  <div class="field">
+    <%= f.label :comment %><br />
+    <%= f.select :comment , I18n.t('fray.lecture_assignments') %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
