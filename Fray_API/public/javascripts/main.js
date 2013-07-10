@@ -15,5 +15,5 @@ $().ready(function()
 
     //Set Form Button Style
     $('input[name = "commit"]').attr('class','btn btn-primary');
-    $('#fray_header div>a').attr('class','btn');
+//    $('#fray_header div>ul>a').attr('class','btn');
 });

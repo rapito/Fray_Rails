@@ -13,11 +13,13 @@
 
   <div class="field">
     <%= f.label :lecture_id %><br />
-    <%= f.select :lecture_id , Lecture.all.collect {|x| [x.subject.name + ' - ' +x.group.name,x.id]} %>
+    <%= f.text_field :null , :value => lecture_get_name(@lecture), :disabled => true %>
+    <%= f.hidden_field :lecture_id, :value => @lecture.id %>
   </div>
   <div class="field">
     <%= f.label :student_id %><br />
-    <%= f.select :student_id , User.all.reject{|x| x.kind == I18n.t('fray.teacher').to_s }.collect {|x| [x.first_name + ' ' + x.first_last_name, x.id]} %>
+    <%= f.text_field :null, :value => user_get_name(@student).to_s, :disabled => true %>
+    <%= f.hidden_field :student_id, :value => @student.id %>
   </div>
   <div class="field">
     <%= f.label :comment %><br />

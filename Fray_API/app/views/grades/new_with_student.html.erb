@@ -1,5 +1,5 @@
-<h1>Nueva Nota</h1>
+<h1><%= I18n.t('fray.new_m') + ' ' + I18n.t('fray.models.grade') %></h1>
 
-<%= render 'form' %>
+<%= render 'form_with_student' %>
 
 <%= link_to 'Back', grades_path %>

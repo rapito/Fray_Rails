@@ -1,9 +1,12 @@
-en:
+es:
   fray:
 
     title: Fray Ramón Pané
     subtitle: Sistema Academico
     menu_title: Administración
+
+    new_m: Nuevo
+    new_f: Nueva
 
     welcome:
       title: Bienvenido
@@ -33,7 +36,9 @@ en:
     buttons:
       reports: Reportes
       manage: Administración
-      set_grades: Poner Notas
+      processes: Procesos
+      process:
+        set_grades: Poner Notas
 
       add_new: Agregar Nuevo
       select: Seleccionar

@@ -71,7 +71,8 @@ class GradesController < ApplicationController
 
   def new_with_student
     @grade = Grade.new
-
+    @student = Student.find(params[:student_id])
+    @lecture = Lecture.find(params[:lecture_id])
 
     respond_to do |format|
       format.html # new.html.erb

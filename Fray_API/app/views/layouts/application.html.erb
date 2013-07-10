@@ -45,6 +45,7 @@
         <h3><%= I18n.t('fray.subtitle').to_s  %></h3>
 
         <div class="btn-toolbar" style="margin: 0;">
+
           <div class="btn-group">
             <button class="btn dropdown-toggle" data-toggle="dropdown"> <%= I18n.t('fray.buttons.reports').to_s  %> <span class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -73,7 +74,15 @@
             </ul>
           </div>
 
-          <%= link_to I18n.t('fray.buttons.set_grades') , '/grades/manage' %>
+          <div class="btn-group">
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <%= I18n.t('fray.buttons.processes').to_s  %> <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><%= link_to I18n.t('fray.buttons.process.set_grades') , '/grades/manage' %></li>
+            </ul>
+          </div>
+
         </div>
 
       </div>
