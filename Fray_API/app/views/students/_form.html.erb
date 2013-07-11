@@ -1,17 +1,82 @@
 <%= form_for(@student) do |f| %>
-  <% if @student.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
+    <% if @student.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@student.errors.count, "error") %> prohibited this student from being saved:</h2>
 
-      <ul>
-      <% @student.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% @student.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <%= f.hidden_field :kind , :value => 'Student'%>
+
+    <div class="field">
+      <%= f.label :enrollment_code %><br />
+      <%= f.text_field :enrollment_code %>
     </div>
-  <% end %>
+    <div class="field">
+      <%= f.label :enrollment_outer_code %><br />
+      <%= f.text_field :enrollment_outer_code %>
+    </div>
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :middle_name %><br />
+      <%= f.text_field :middle_name %>
+    </div>
+    <div class="field">
+      <%= f.label :first_last_name %><br />
+      <%= f.text_field :first_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :second_last_name %><br />
+      <%= f.text_field :second_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :identification_card %><br />
+      <%= f.text_field :identification_card %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_1 %><br />
+      <%= f.text_field :phone_1 %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_2 %><br />
+      <%= f.text_field :phone_2 %>
+    </div>
+    <div class="field">
+      <%= f.label :address_1 %><br />
+      <%= f.text_field :address_1 %>
+    </div>
+    <div class="field">
+      <%= f.label :address_2 %><br />
+      <%= f.text_field :address_2 %>
+    </div>
+    <div class="field">
+      <%= f.label :nationality %><br />
+      <%= f.text_field :nationality %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.hidden_field :registration_date, :value => Date.today %>
+    <%= f.hidden_field :inactivity_date, :value => 2.day.ago.to_date %>
+    <%= f.hidden_field :active, :value => true %>
+
+    <div class="field">
+      <%= f.label :passport %><br />
+      <%= f.text_field :passport %>
+    </div>
+
+    <div class="field">
+      <%= f.label :group %><br />
+      <%= f.select :group_id, Group.all.collect {|x| [x.name + ' - ' + x.stage.name,x.id] } %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

@@ -7,9 +7,7 @@
     <th>Period</th>
     <th>Teacher</th>
     <th>Stage</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Students</th>
   </tr>
 
 <% @groups.each do |group| %>
@@ -19,7 +17,7 @@
     <td><%= group.period.init_date.to_formatted_s(:long)  + ' - ' + group.period.end_date.to_formatted_s(:long) %></td>
     <td><%= group.teacher.first_name + ' ' + group.teacher.first_last_name %></td>
     <td><%= group.stage.name %></td>
-    <!--<td><%# link_to 'Show', group %></td>-->
+    <td><%= group.students.count %></td>
     <!--<td><%# link_to 'Edit', edit_group_path(group) %></td>-->
     <!--<td><%# link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>-->
   </tr>

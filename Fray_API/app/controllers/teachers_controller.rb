@@ -10,6 +10,15 @@ class TeachersController < ApplicationController
     end
   end
 
+  def manage
+    @teachers = Teacher.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @teachers }
+    end
+  end
+
   # GET /teachers/1
   # GET /teachers/1.xml
   def show

@@ -21,6 +21,22 @@
   <%= @group.stage.name %>
 </div>
 
+<br><br>
+<table>
+  <th><%= I18n.t('fray.buttons.students') %></th>
+  <th><%= I18n.t('fray.users.name') %></th>
+  <th><%= I18n.t('fray.users.enrollment_code') %></th>
+
+<% @group.students.each do |student| %>
+
+      <tr>
+        <td></td>
+        <td><%= user_get_name student %></td>
+        <td><%= student.enrollment_code %></td>
+      </tr>
+
+<% end %>
+</table>
 
 <br /><br />
 <%= link_to 'Edit', edit_group_path(@group) %> |

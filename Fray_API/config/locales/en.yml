@@ -8,17 +8,18 @@ en:
     new_m: New
     new_f: New
 
+    name: Name
+
+    users:
+      name: Name
+      enrollment_code: Enrollment Code
+
     welcome:
       title: Welcome to the School's ASM Web Application
       content: This is the Web Application ASM Prototype for Fray Ramón Pané's School. Try out the buttons above to check the basic early functionality of the system. Check out the Reports button group to see the basic reports pages. Don't forget the Management button group, where you will find access to setting up lectures and student groups.
 
-    student: STUDENT
-    teacher: TEACHER
-
-    actions:
-      set_grades: Set Grades
-      choose_group: Choose a Group
-
+    student: Student
+    teacher: Teacher
 
     models:
       grade: Grade
@@ -39,6 +40,9 @@ en:
       processes: Processes
       process:
         set_grades: Set grades
+        register_student: Register Student
+        choose_group: Choose a Group
+
 
       add_new: Add New
       select: Select

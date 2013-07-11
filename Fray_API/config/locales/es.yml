@@ -15,11 +15,6 @@ es:
     student: Estudiante
     teacher: Profesor
 
-    actions:
-      set_grades: Poner Notas
-      choose_group: Elegir Sección
-
-
     models:
       grade: Nota
       grades: Notas
@@ -39,6 +34,9 @@ es:
       processes: Procesos
       process:
         set_grades: Poner Notas
+        register_student: Inscribir Estudiante
+        choose_group: Elegir Sección
+
 
       add_new: Agregar Nuevo
       select: Seleccionar

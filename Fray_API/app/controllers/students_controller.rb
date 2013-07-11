@@ -10,6 +10,15 @@ class StudentsController < ApplicationController
     end
   end
 
+  def manage
+    @students = Student.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @students }
+    end
+  end
+
   # GET /students/1
   # GET /students/1.xml
   def show
@@ -41,6 +50,7 @@ class StudentsController < ApplicationController
   # POST /students.xml
   def create
     @student = Student.new(params[:student])
+    @student.assign_to_group
 
     respond_to do |format|
       if @student.save

@@ -8,8 +8,8 @@ FrayAcademicSystem::Application.routes.draw do
 
   get "groups/manage", to: "groups#manage"
   get "lectures/manage", to: "lectures#manage"
-  #get "teachers/manage", to: "users#manage_teachers"
-  #get "students/manage", to: "users#manage_students"
+  get "teachers/manage", to: "teachers#manage"
+  get "students/manage", to: "students#manage"
   get "subjects/manage", to: "subjects#manage"
   get "institutions/manage", to: "institutions#manage"
   get "stages/manage", to: "stages#manage"

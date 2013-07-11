@@ -1,5 +1,5 @@
 <h1><%= I18n.t('fray.models.grades') %> </h1>
-<h2><%= I18n.t('fray.actions.choose_group') %> </h2>
+<h2><%= I18n.t('fray.buttons.process.choose_group') %> </h2>
 
 <table>
   <tr>
@@ -8,6 +8,7 @@
     <th>Period</th>
     <th>Teacher</th>
     <th>Stage</th>
+    <th>Students</th>
     <th></th>
   </tr>
 
@@ -18,6 +19,7 @@
         <td><%= group_get_period group %></td>
         <td><%= user_get_name group.teacher %></td>
         <td><%= group.stage.name %></td>
+        <td><%= group.students.count %></td>
         <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.group') , '/grades/manage/'+group.id.to_s %></td>
       </tr>
   <% end %>
@@ -25,7 +27,6 @@
 
 </table>
 
-<br />
 
 <% if @lectures %>
 
@@ -37,7 +38,7 @@
         <th>Schedule</th>
         <th>Subject</th>
         <th>Teacher</th>
-        <!--<th></th>-->
+        <th></th>
 
       </tr>
 
@@ -62,13 +63,15 @@
       <tr>
         <th>Enrollment code</th>
         <th>Name</th>
-        <!--<th></th>-->
+        <th>Grade</th>
+        <th></th>
       </tr>
 
       <% @students.each do |student| %>
           <tr>
             <td><%= student.enrollment_code %></td>
             <td><%= user_get_name student %></td>
+            <td><%= find_grades_for_student_lecture(student,@lecture).first.value unless find_grades_for_student_lecture(student,@lecture).empty? %></td>
             <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') , '/grades/new/'+student.id.to_s+'/'+@lecture.id.to_s %></td>
           </tr>
       <% end %>
