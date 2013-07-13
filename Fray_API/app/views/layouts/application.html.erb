@@ -18,8 +18,9 @@
                 <%= I18n.t('fray.menu_title').to_s  %>
               </a>
 
-              <ul class="nav">
-
+              <ul id="map_locale">
+                <li> <%= link_to '',url_for( :locale => :es ) %> </li>
+                <li> <%= link_to '',url_for( :locale => :en ) %> </li>
               </ul>
 
             </div>

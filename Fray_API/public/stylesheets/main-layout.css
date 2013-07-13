@@ -115,3 +115,25 @@ body
     text-shadow: 1px 1px white;
     font-weight: bold;
 }
+
+#map_locale li
+{
+    float: right;
+}
+#map_locale li
+{
+    list-style: none;
+}
+#map_locale li a
+{
+    background-image: url('/images/flags.png');
+    background-repeat: no-repeat;
+    /*padding: 0 0 0 90px;*/
+    margin: 5px;
+    display: block;
+    width: 16px;
+    height: 12px;
+}
+
+#map_locale li:first-child a {background-position: -88px -144px}
+#map_locale li:last-child a {background-position: -3px -564px}

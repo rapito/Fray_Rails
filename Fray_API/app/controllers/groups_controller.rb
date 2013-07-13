@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   # GET /groups/manage
   # GET /groups/manage.json
   def manage
+
     @groups = Group.all
 
     respond_to do |format|
