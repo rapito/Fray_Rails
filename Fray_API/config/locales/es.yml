@@ -5,6 +5,9 @@ es:
     subtitle: Sistema Academico
     menu_title: Administración
 
+    logged_in_as: Iniciado sesión como
+    logout: Cerrar Sesión
+
     new_m: Nuevo
     new_f: Nueva
 
@@ -31,6 +34,9 @@ es:
     buttons:
       reports: Reportes
       manage: Administración
+      sign_in: Iniciar Sesión
+      username: Nombre de usuario
+      password: Contraseña
       processes: Procesos
       process:
         set_grades: Poner Notas

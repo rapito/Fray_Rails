@@ -5,6 +5,9 @@ en:
     subtitle: Academic System Management
     menu_title: Management
 
+    logged_in_as: Logged in as
+    logout: Logout
+
     new_m: New
     new_f: New
 
@@ -36,6 +39,9 @@ en:
 
     buttons:
       reports: Reports
+      sign_in: Sign in
+      username: Username
+      password: Password
       manage: Management
       processes: Processes
       process:

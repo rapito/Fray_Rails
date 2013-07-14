@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fray Academic System</title>
+  <title><%= I18n.t('fray.title') +''+I18n.t('fray.subtitle') %></title>
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "bootstrap.js" %>
@@ -18,10 +19,29 @@
                 <%= I18n.t('fray.menu_title').to_s  %>
               </a>
 
-              <ul id="map_locale">
+              <ul id="map_locale" class="pull-right">
                 <li> <%= link_to '',url_for( :locale => :es ) %> </li>
                 <li> <%= link_to '',url_for( :locale => :en ) %> </li>
               </ul>
+
+
+              <% if @user=5 %>
+
+                <p class="navbar-text pull-right">
+                  | <%= link_to I18n.t('fray.logout') , url_for('logout')%>
+                </p>
+
+                <p class="navbar-text pull-right">
+                  <%= I18n.t('fray.logged_in_as')%> Robert Peralta &nbsp
+                </p>
+
+              <% else %>
+                  <form class="navbar-form pull-right">
+                    <input class="span2" type="text" placeholder="<%=  I18n.t('fray.buttons.username') %>">
+                    <input class="span2" type="password" placeholder="<%=  I18n.t('fray.buttons.password') %>">
+                    <button type="submit" class="btn"><%=  I18n.t('fray.buttons.sign_in') %> </button>
+                  </form>
+              <% end %>
 
             </div>
         </div>
@@ -35,6 +55,8 @@
               <div class="alert alert-success">@success</div>
           <% end %>
       <% end %>
+      <!--<p class="notice"><%# notice %></p>-->
+      <!--<p class="alert"><%#   alert %></p>-->
     </div>
 
 

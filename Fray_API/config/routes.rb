@@ -1,5 +1,7 @@
 FrayAcademicSystem::Application.routes.draw do
 
+  devise_for :users
+
   get "grades/manage", to: "grades#manage"
   get "grades/manage/:id", to: "grades#manage"
   get "grades/manage/:id/:lecture_id", to: "grades#manage"
@@ -15,6 +17,7 @@ FrayAcademicSystem::Application.routes.draw do
   get "stages/manage", to: "stages#manage"
   get "periods/manage", to: "periods#manage"
   get "schedules/manage", to: "schedules#manage"
+
 
   resources :lectures
 
@@ -35,12 +38,6 @@ FrayAcademicSystem::Application.routes.draw do
   resources :periods
 
   resources :institutions
-
-  resources :materia
-
-  resources :tipos
-
-  resources :tests
 
   resources :teachers
 
