@@ -25,10 +25,10 @@
               </ul>
 
 
-              <% if @user=5 %>
+              <% if user_signed_in? %>
 
                 <p class="navbar-text pull-right">
-                  | <%= link_to I18n.t('fray.logout') , url_for('logout')%>
+                  | <%= link_to I18n.t('fray.logout') ,'/logout' %>
                 </p>
 
                 <p class="navbar-text pull-right">
@@ -39,7 +39,7 @@
                   <form class="navbar-form pull-right">
                     <input class="span2" type="text" placeholder="<%=  I18n.t('fray.buttons.username') %>">
                     <input class="span2" type="password" placeholder="<%=  I18n.t('fray.buttons.password') %>">
-                    <button type="submit" class="btn"><%=  I18n.t('fray.buttons.sign_in') %> </button>
+                    <button type="submit" class="btn btn-primary"><%=  I18n.t('fray.buttons.sign_in') %> </button>
                   </form>
               <% end %>
 

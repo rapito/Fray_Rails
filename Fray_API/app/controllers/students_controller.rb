@@ -49,8 +49,12 @@ class StudentsController < ApplicationController
   # POST /students
   # POST /students.xml
   def create
-    @student = Student.new(params[:student])
-    @student.assign_to_group
+    begin
+      @student = Student.new(params[:student])
+      @student.assign_to_group
+    rescue => error
+      #@student.errors.add(error)
+    end
 
     respond_to do |format|
       if @student.save

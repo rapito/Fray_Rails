@@ -76,6 +76,21 @@
       <%= f.select :group_id, Group.all.collect {|x| [x.name + ' - ' + x.stage.name,x.id] } %>
     </div>
 
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation%>
+    </div>
+
     <div class="actions">
       <%= f.submit %>
     </div>

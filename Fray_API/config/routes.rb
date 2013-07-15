@@ -1,6 +1,12 @@
 FrayAcademicSystem::Application.routes.draw do
 
-  devise_for :users
+  #get "users/sign_in", to: "welcome#index"
+
+  devise_for :users do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+
+  end
 
   get "grades/manage", to: "grades#manage"
   get "grades/manage/:id", to: "grades#manage"
