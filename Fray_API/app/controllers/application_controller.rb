@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    puts 'Looged out!'
+    puts 'Logged out!'
   end
 
 end

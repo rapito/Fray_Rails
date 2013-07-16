@@ -32,15 +32,26 @@
                 </p>
 
                 <p class="navbar-text pull-right">
-                  <%= I18n.t('fray.logged_in_as')%> Robert Peralta &nbsp
+                  <%= I18n.t('fray.logged_in_as') + ' ' + get_user_name(current_user) %> &nbsp
                 </p>
 
               <% else %>
-                  <form class="navbar-form pull-right">
-                    <input class="span2" type="text" placeholder="<%=  I18n.t('fray.buttons.username') %>">
-                    <input class="span2" type="password" placeholder="<%=  I18n.t('fray.buttons.password') %>">
-                    <button type="submit" class="btn btn-primary"><%=  I18n.t('fray.buttons.sign_in') %> </button>
-                  </form>
+                  <%= form_for resource_name , resource,:url => session_path(resource_name) do |f|%>
+                      <div class="navbar-form pull-right">
+
+                      <%= f.text_field :email %>
+                      <%= f.password_field :password %>
+
+                        <%= f.submit "Sign in" %>
+                      </div>
+
+                  <% end -%>
+
+                  <!--<form class="navbar-form pull-right">-->
+                    <!--<input class="span2" type="text" placeholder="<%=  I18n.t('fray.buttons.username') %>">-->
+                    <!--<input class="span2" type="password" placeholder="<%=  I18n.t('fray.buttons.password') %>">-->
+                    <!--<button type="submit" class="btn btn-primary"><%=  I18n.t('fray.buttons.sign_in') %> </button>-->
+                  <!--</form>-->
               <% end %>
 
             </div>
@@ -74,8 +85,8 @@
             <ul class="dropdown-menu">
               <li><%= link_to I18n.t('fray.buttons.groups').to_s , groups_path %></li>
               <li><%= link_to I18n.t('fray.buttons.lectures').to_s , lectures_path %></li>
-              <li><%= link_to I18n.t('fray.buttons.students').to_s , '/students' %></li>
-              <li><%= link_to I18n.t('fray.buttons.teachers').to_s , '/teachers' %></li>
+              <li><%= link_to I18n.t('fray.buttons.students').to_s , students_path %></li>
+              <li><%= link_to I18n.t('fray.buttons.teachers').to_s , teachers_path %></li>
               <li class="divider"></li>
               <li><%= link_to I18n.t('fray.buttons.subjects_catalog').to_s , subjects_path %></li>
             </ul>
@@ -86,8 +97,8 @@
             <ul class="dropdown-menu">
               <li><a href="/groups/manage"><%= I18n.t('fray.buttons.groups').to_s  %></a></li>
               <li><a href="/lectures/manage"><%= I18n.t('fray.buttons.lectures').to_s  %></a></li>
-              <li><a href="/teachers"><%= I18n.t('fray.buttons.teachers').to_s  %></a></li>
-              <li><a href="/students"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
+              <li><a href="/teachers/manage"><%= I18n.t('fray.buttons.teachers').to_s  %></a></li>
+              <li><a href="/students/manage"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
               <li><a href="/subjects/manage"><%= I18n.t('fray.buttons.subjects').to_s  %></a></li>
               <li class="divider"></li>
               <li><a href="/institutions/manage"><%= I18n.t('fray.buttons.institutions').to_s  %></a></li>
