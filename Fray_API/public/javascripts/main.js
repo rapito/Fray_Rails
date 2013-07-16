@@ -16,4 +16,9 @@ $().ready(function()
     //Set Form Button Style
     $('input[name = "commit"]').attr('class','btn btn-primary');
 //    $('#fray_header div>ul>a').attr('class','btn');
+
+    //Set Styles to error explanation div on forms
+
+    $('#error_explanation h2').attr('class','alert alert-error');
+    $('#error_explanation ul li').attr('class','alert alert-error');
 });

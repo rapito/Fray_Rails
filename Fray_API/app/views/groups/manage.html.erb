@@ -1,6 +1,5 @@
-<h1>Groups</h1>
-<a href="<%= new_group_path %>" style="float: right;" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></a>
-<br /><br />
+<h1><%= pluralize_this I18n.t('fray.models.group') %></h1>
+<p><a href="<%= new_group_path %>" style="float: right;" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></a></p>
 
 <table>
   <tr>

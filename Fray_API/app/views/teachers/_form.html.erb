@@ -11,7 +11,80 @@
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+    <%= f.hidden_field :kind , :value => 'Teacher'%>
+
+    <div class="field">
+      <%= f.label :first_name %><br />
+      <%= f.text_field :first_name %>
+    </div>
+    <div class="field">
+      <%= f.label :middle_name %><br />
+      <%= f.text_field :middle_name %>
+    </div>
+    <div class="field">
+      <%= f.label :first_last_name %><br />
+      <%= f.text_field :first_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :second_last_name %><br />
+      <%= f.text_field :second_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :identification_card %><br />
+      <%= f.text_field :identification_card %>
+    </div>
+    <div class="field">
+      <%= f.label :studies %><br />
+      <%= f.text_field :studies %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_1 %><br />
+      <%= f.text_field :phone_1 %>
+    </div>
+    <div class="field">
+      <%= f.label :phone_2 %><br />
+      <%= f.text_field :phone_2 %>
+    </div>
+    <div class="field">
+      <%= f.label :address_1 %><br />
+      <%= f.text_field :address_1 %>
+    </div>
+    <div class="field">
+      <%= f.label :address_2 %><br />
+      <%= f.text_field :address_2 %>
+    </div>
+    <div class="field">
+      <%= f.label :nationality %><br />
+      <%= f.text_field :nationality %>
+    </div>
+
+    <%= f.hidden_field :registration_date, :value => Date.today %>
+    <%= f.hidden_field :inactivity_date, :value => 2.day.ago.to_date %>
+    <%= f.hidden_field :active, :value => true %>
+
+    <div class="field">
+      <%= f.label :passport %><br />
+      <%= f.text_field :passport %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.password_field :password %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation %><br />
+      <%= f.password_field :password_confirmation%>
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
 <% end %>

@@ -1,5 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<% @teacher.instance_variables.each do |f| %>
+
+<div class="field">
+  <b><%= f.to_s %> </b>
+</div>
+
+<% end %>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>

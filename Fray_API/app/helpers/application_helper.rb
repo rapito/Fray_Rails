@@ -10,6 +10,10 @@ module ApplicationHelper
     I18n.t('fray.new_f') + ' ' + entity_name
   end
 
+  def pluralize_this obj
+   obj + 's'
+  end
+
 
   def resource_name
     :user
