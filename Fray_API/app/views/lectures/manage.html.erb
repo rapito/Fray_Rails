@@ -1,4 +1,7 @@
-<h1>Lectures</h1>
+<h1><%= pluralize_this I18n.t('fray.models.lecture') %></h1>
+
+
+<p><a href="<%= new_lecture_path %>" class="btn btn-small btn-primary down_pusher pull-right"><%= I18n.t('fray.buttons.add_new') %></a></p>
 
 <table>
   <tr>
@@ -24,6 +27,15 @@
 <% end %>
 </table>
 
+
+<% if @lectures.length > 5  %>
+    <p><a href="<%= new_lecture_path %>"class="btn btn-small btn-primary down_pusher"><%= I18n.t('fray.buttons.add_new') %></a></p>
+<% end %>
+
+
+
 <br />
+
+
 
 <!--<%# link_to 'New Lecture', new_lecture_path %>-->

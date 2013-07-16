@@ -1,12 +1,87 @@
 <p id="notice"><%= notice %></p>
 
-<% @teacher.instance_variables.each do |f| %>
+<p class="field">
+  <b>Studies:</b>
+  <%= @teacher.studies %>
+</p>
 
-<div class="field">
-  <b><%= f.to_s %> </b>
-</div>
+<p class="field">
+  <b>Salary:</b>
+  <%= @teacher.salary %>
+</p>
 
-<% end %>
+<p class="field">
+  <b>First name:</b>
+  <%= @teacher.first_name %>
+</p>
 
+<p class="field">
+  <b>Middle name:</b>
+  <%= @teacher.middle_name %>
+</p>
+
+<p class="field">
+  <b>First last name:</b>
+  <%= @teacher.first_last_name %>
+</p>
+
+<p class="field">
+  <b>Second last name:</b>
+  <%= @teacher.second_last_name %>
+</p>
+
+<p class="field">
+  <b>Identification card:</b>
+  <%= @teacher.identification_card %>
+</p>
+
+<p class="field">
+  <b>Phone 1:</b>
+  <%= @teacher.phone_1 %>
+</p>
+
+<p class="field">
+  <b>Phone 2:</b>
+  <%= @teacher.phone_2 %>
+</p>
+
+<p class="field">
+  <b>Address 1:</b>
+  <%= @teacher.address_1 %>
+</p>
+
+<p class="field">
+  <b>Address 2:</b>
+  <%= @teacher.address_2 %>
+</p>
+
+<p class="field">
+  <b>Nationality:</b>
+  <%= @teacher.nationality %>
+</p>
+
+<p class="field">
+  <b>Registration date:</b>
+  <%= @teacher.registration_date %>
+</p>
+
+<p class="field">
+  <b>Inactivity date:</b>
+  <%= @teacher.inactivity_date %>
+</p>
+
+<p class="field">
+  <b>Active:</b>
+  <%= @teacher.active %>
+</p>
+
+<p class="field">
+  <b>Passport:</b>
+  <%= @teacher.passport %>
+</p>
+
+
+<p>
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
-<%= link_to 'Back', teachers_path %>
+<%= link_to 'Back', '/teachers/manage' %>
+</p>

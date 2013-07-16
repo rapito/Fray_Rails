@@ -22,22 +22,25 @@
 </div>
 
 <br><br>
-<table>
-  <th><%= I18n.t('fray.buttons.students') %></th>
-  <th><%= I18n.t('fray.users.name') %></th>
-  <th><%= I18n.t('fray.users.enrollment_code') %></th>
 
-<% @group.students.each do |student| %>
+<% if @group.students.size>0 %>
+    <table>
+      <th><%= I18n.t('fray.buttons.students') %></th>
+      <th><%= I18n.t('fray.users.name') %></th>
+      <th><%= I18n.t('fray.users.enrollment_code') %></th>
 
-      <tr>
-        <td></td>
-        <td><%= user_get_name student %></td>
-        <td><%= student.enrollment_code %></td>
-      </tr>
+    <% @group.students.each do |student| %>
 
-<% end %>
-</table>
+          <tr>
+            <td></td>
+            <td><%= user_get_name student %></td>
+            <td><%= student.enrollment_code %></td>
+          </tr>
 
+    <% end %>
+    </table>
 <br /><br />
+<% end %>
+
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back',  '/groups/manage'  %>
