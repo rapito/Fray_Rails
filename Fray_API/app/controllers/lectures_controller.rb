@@ -78,4 +78,37 @@ class LecturesController < ApplicationController
     end
   end
 
+  def report
+    book = Spreadsheet::Workbook.new
+    sheet1 = book.create_worksheet
+    sheet1.name = I18n.t('fray.models.lecture')
+
+    #Now, add data to the Worksheet, using either Worksheet#[]=,
+    # Worksheet#update_row, or work directly on Row using any of
+    # the Array-Methods that modify an Array in place:
+
+    sheet1.row(0).concat [I18n.t('fray.models.lecture'),I18n.t('fray.report')]
+    sheet1.row(1).concat [I18n.t('fray.models.group'),I18n.t('fray.models.schedule'),I18n.t('fray.models.subject'),I18n.t('fray.models.teacher')]
+
+    row = 1
+    Lecture.all.each do |l|
+      row = row.next
+      sheet1.row(row).push(l.group.name,l.schedule.humanize,l.subject.name,l.teacher.first_name+' '+l.teacher.first_last_name)
+    end
+
+    sheet1.row(0).height = 18
+    format = Spreadsheet::Format.new :color => :blue,
+                                     :weight => :bold,
+                                     :size => 18
+    sheet1.row(0).default_format = format
+
+    bold = Spreadsheet::Format.new :weight => :bold
+    4.times do |x| sheet1.row(1).set_format(x, bold) end
+
+    #And finally, write the Excel File:
+    spreadsheet = StringIO.new
+    book.write spreadsheet
+    send_data spreadsheet.string, :filename => I18n.t('fray.models.lecture')+'_'+I18n.t('fray.report')+".xls", :type =>  "application/vnd.ms-excel"
+  end
+
 end

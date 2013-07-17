@@ -16,12 +16,13 @@ FrayAcademicSystem::Application.routes.draw do
   get "students/manage", to: "students#manage"
 
   get "lectures/manage", to: "lectures#manage"
+  get "lectures/report", to: "lectures#report"
 
   get "subjects/manage", to: "subjects#manage"
   get "institutions/manage", to: "institutions#manage"
   get "stages/manage", to: "stages#manage"
   get "periods/manage", to: "periods#manage"
-  get "lectures/assign_students/:id/:student_id", to: "lectures#assign_students"
+  #get "lectures/assign_students/:id/:student_id", to: "lectures#assign_students"
   get "schedules/manage", to: "schedules#manage"
 
   get "grades/manage", to: "grades#manage"
