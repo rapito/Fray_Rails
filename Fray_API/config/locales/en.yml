@@ -37,6 +37,7 @@ en:
       institution: Institution
       period: Academic Period
       stage: Academic Stage
+      small_stage: Stage
 
     buttons:
       reports: Reports

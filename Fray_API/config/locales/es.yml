@@ -31,6 +31,7 @@ es:
       institution: Institución
       period: Perido Academico
       stage: Grado Academico
+      small_stage: Grado
 
     buttons:
       reports: Reportes

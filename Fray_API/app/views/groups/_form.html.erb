@@ -22,17 +22,17 @@
 
   <div class="field">
     <%= f.label :period %><br />
-    <%= f.select :period_id , Period.all.collect{|x| [x.init_date.to_formatted_s(:long)  + '-' + x.end_date.to_formatted_s(:long) ,x.id] } %>
+    <%= f.select :period_id , select_for_periods %>
   </div>
 
     <div class="field">
       <%= f.label :teacher %><br />
-      <%= f.select :teacher_id , User.all.reject{|x| x.kind == I18n.t('fray.student').to_s }.collect{|x| [x.first_name ,x.id] } %>
+      <%= f.select :teacher_id ,  select_for_teachers %>
     </div>
 
   <div class="field">
     <%= f.label :stage %><br />
-    <%= f.select :stage_id , Stage.all.collect{|x| [x.name ,x.id] } %>
+    <%= f.select :stage_id , select_for_stages %>
   </div>
 
 
