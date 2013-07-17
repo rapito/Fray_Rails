@@ -117,6 +117,21 @@ namespace :db do
       end
       puts 'Finished with Schedules!'
 
+      puts 'Creating Lectures...'
+      Group.all.each do |x|
+        Schedule.all.each do |sch|
+          lecture = Lecture.create
+          lecture.group = x
+          lecture.schedule = sch
+          lecture.subject = Subject.all.shuffle.first
+          lecture.teacher = Teacher.all.shuffle.first
+          x.lectures << lecture
+          x.save
+          lecture.save
+        end
+      end
+      puts 'Finished with Lectures!'
+
 
       puts 'Creating Students...'
       100.times do
@@ -141,8 +156,9 @@ namespace :db do
             :email => Faker::Internet.email,
             :password => "greatpasswordhuh",
             :password_confirmation => "greatpasswordhuh",
-            :group_id => Group.all.shuffle.first
+            :group_id => Group.all.shuffle.first.id
         )
+        #s.assign_to_group
         s.save!
 
       end

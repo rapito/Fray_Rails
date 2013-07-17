@@ -21,12 +21,7 @@
     <td><%= lecture.subject.name %></td>
     <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
 
-    <td>
-      <a onclick="assignLectureToAddStudentForm(<%= lecture.id %>)" href="#assign_student_modal" role="button" data-toggle="modal" >
-        <%= I18n.t('fray.assign') +' '+ pluralize_this(I18n.t('fray.models.student')) %>
-      </a>
-    </td>
-
+    <td><%= link_to 'Show', lecture %></td>
     <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
     <td><%= link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
@@ -38,9 +33,7 @@
     <p><a href="<%= new_lecture_path %>"class="btn btn-small btn-primary down_pusher"><%= I18n.t('fray.buttons.add_new') %></a></p>
 <% end %>
 
-
-
-<br />
+<%= will_paginate @posts %>
 
 <%= render 'assign_students' %>
 

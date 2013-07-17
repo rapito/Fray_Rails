@@ -2,7 +2,7 @@ class GroupsController < ApplicationController
   # GET /groups
   # GET /groups.json
   def index
-    @groups = Group.all
+    @groups = Group.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,11 +10,17 @@ class GroupsController < ApplicationController
     end
   end
 
-  # GET /groups/manage
-  # GET /groups/manage.json
+  def assign_student
+    @student = Student.find(params[:student][:id])
+    @group = Group.find(params[:student][:group_id])
+
+    @student.lectures << @group.lectures
+    redirect_to('/groups/manage', :notice => I18n.t('fray.models.student')+' '+I18n.t('assigned_succes') )
+  end
+
   def manage
 
-    @groups = Group.all
+    @groups = Group.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # manage.html.erb

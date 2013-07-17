@@ -11,6 +11,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
 <% @groups.each do |group| %>
@@ -20,6 +21,11 @@
     <td><%= group_get_period group %></td>
     <td><%= user_get_name group.teacher %></td>
     <td><%= group.stage.name %></td>
+    <td>
+      <a onclick="assignLectureToAddStudentForm(<%= group.id %>)" href="#assign_student_modal" role="button" data-toggle="modal" >
+        <%= I18n.t('fray.assign') +' '+ pluralize_this(I18n.t('fray.models.student')) %>
+      </a>
+    </td>
     <td><%= link_to 'Show', group %></td>
     <td><%= link_to 'Edit', edit_group_path(group) %></td>
     <td><%= link_to 'Destroy', group, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -31,5 +37,5 @@
     <p><a href="<%= new_group_path %>" style="float: right;" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></a></p>
 <% end %>
 
-<br />
-
+<%= will_paginate @posts %>
+<%= render 'assign_students' %>

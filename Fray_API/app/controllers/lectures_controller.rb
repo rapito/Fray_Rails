@@ -1,7 +1,7 @@
 class LecturesController < ApplicationController
 
   def index
-    @lectures = Lecture.all
+    @lectures = Lecture.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -9,16 +9,8 @@ class LecturesController < ApplicationController
     end
   end
 
-  def assign_student
-    @student = Student.find(params[:student][:id])
-    @lecture = Lecture.find(params[:student][:lecture_id])
-
-    @student.lectures << @lecture
-    redirect_to('/lectures/manage', :notice => 'Student was succesfully assigned.')
-  end
-
   def manage
-    @lectures = Lecture.all
+    @lectures = Lecture.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

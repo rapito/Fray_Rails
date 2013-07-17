@@ -50,6 +50,7 @@ en:
         set_grades: Set grades
         register_student: Register Student
         choose_group: Choose a Group
+        assign_succes: was succesfully assigned.
 
 
       add_new: Add New

@@ -10,11 +10,11 @@ FrayAcademicSystem::Application.routes.draw do
 
   end
 
+  get "groups/assign_student", to: "groups#assign_student"
   get "groups/manage", to: "groups#manage"
   get "teachers/manage", to: "teachers#manage"
   get "students/manage", to: "students#manage"
 
-  get "lectures/assign_student", to: "lectures#assign_student"
   get "lectures/manage", to: "lectures#manage"
 
   get "subjects/manage", to: "subjects#manage"

@@ -26,5 +26,5 @@ $().ready(function()
 
 var assignLectureToAddStudentForm = function(val)
 {
-    $('#student_lecture_id').attr('value',val);
+    $('#student_group_id').attr('value',val);
 }

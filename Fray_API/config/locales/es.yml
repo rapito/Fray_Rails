@@ -44,6 +44,7 @@ es:
         set_grades: Poner Notas
         register_student: Inscribir Estudiante
         choose_group: Elegir Sección
+        assign_succes: fue asignado satisfactoriamente.
 
 
       add_new: Agregar Nuevo

@@ -14,7 +14,7 @@ class Student < User
 
   def assign_to_group
      Group.find(group_id).lectures.each do |x|
-        x.students.push self
+        x.students << self
       end
   end
 
