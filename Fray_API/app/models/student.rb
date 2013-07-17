@@ -8,6 +8,7 @@ class Student < User
   has_many :grades
   #un estudiante tiene muchas clases
   has_and_belongs_to_many :lectures
+  #has_many :lectures, :through => :lectures_students
 
   attr_accessor :group_id
 

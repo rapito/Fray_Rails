@@ -1,6 +1,5 @@
 class LecturesController < ApplicationController
-  # GET /lectures
-  # GET /lectures.json
+
   def index
     @lectures = Lecture.all
 
@@ -8,6 +7,14 @@ class LecturesController < ApplicationController
       format.html # index.html.erb
       format.json  { render :json => @lectures }
     end
+  end
+
+  def assign_student
+    @student = Student.find(params[:student][:id])
+    @lecture = Lecture.find(params[:student][:lecture_id])
+
+    @student.lectures << @lecture
+    redirect_to('/lectures/manage', :notice => 'Student was succesfully assigned.')
   end
 
   def manage
@@ -19,8 +26,6 @@ class LecturesController < ApplicationController
     end
   end
 
-  # GET /lectures/1
-  # GET /lectures/1.json
   def show
     @lecture = Lecture.find(params[:id])
 
@@ -30,8 +35,6 @@ class LecturesController < ApplicationController
     end
   end
 
-  # GET /lectures/new
-  # GET /lectures/new.json
   def new
     @lecture = Lecture.new
 
@@ -41,13 +44,10 @@ class LecturesController < ApplicationController
     end
   end
 
-  # GET /lectures/1/edit
   def edit
     @lecture = Lecture.find(params[:id])
   end
 
-  # POST /lectures
-  # POST /lectures.json
   def create
     @lecture = Lecture.new(params[:lecture])
 
@@ -62,8 +62,6 @@ class LecturesController < ApplicationController
     end
   end
 
-  # PUT /lectures/1
-  # PUT /lectures/1.json
   def update
     @lecture = Lecture.find(params[:id])
 
@@ -78,8 +76,6 @@ class LecturesController < ApplicationController
     end
   end
 
-  # DELETE /lectures/1
-  # DELETE /lectures/1.json
   def destroy
     @lecture = Lecture.find(params[:id])
     @lecture.destroy
@@ -89,4 +85,5 @@ class LecturesController < ApplicationController
       format.json  { head :ok }
     end
   end
+
 end

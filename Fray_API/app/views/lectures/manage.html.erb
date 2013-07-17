@@ -9,9 +9,9 @@
     <th>Schedule</th>
     <th>Subject</th>
     <th>Teacher</th>
-    <!--<th></th>-->
-    <!--<th></th>-->
-    <!--<th></th>-->
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @lectures.each do |lecture| %>
@@ -20,9 +20,15 @@
     <td><%= lecture.schedule.day + ', ' + I18n.l( lecture.schedule.start_time, :format => "%I.%m %P").to_s + ' - ' + I18n.l( lecture.schedule.end_time, :format => "%I.%m %p") %></td>
     <td><%= lecture.subject.name %></td>
     <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
-    <!--<td><%# link_to 'Show', lecture %></td>-->
-    <!--<td><%# link_to 'Edit', edit_lecture_path(lecture) %></td>-->
-    <!--<td><%# link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>-->
+
+    <td>
+      <a onclick="assignLectureToAddStudentForm(<%= lecture.id %>)" href="#assign_student_modal" role="button" data-toggle="modal" >
+        <%= I18n.t('fray.assign') +' '+ pluralize_this(I18n.t('fray.models.student')) %>
+      </a>
+    </td>
+
+    <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+    <td><%= link_to 'Destroy', lecture, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
@@ -36,6 +42,6 @@
 
 <br />
 
-
+<%= render 'assign_students' %>
 
 <!--<%# link_to 'New Lecture', new_lecture_path %>-->

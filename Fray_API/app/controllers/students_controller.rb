@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   # GET /students
   # GET /students.xml
   def index
-    @students = Student.all
+    @students = Student.all.paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
