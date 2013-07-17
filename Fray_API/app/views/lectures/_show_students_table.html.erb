@@ -1,0 +1,22 @@
+<br><br>
+
+<% if @lecture.students.size>0 %>
+    <table>
+      <th><%= I18n.t('fray.buttons.students') %></th>
+      <th><%= I18n.t('fray.users.enrollment_code') %></th>
+      <th><%= I18n.t('fray.users.name') %></th>
+      <th><%= I18n.t('fray.models.grade') %></th>
+
+      <% @lecture.students.each do |student| %>
+
+          <tr>
+            <td></td>
+            <td><%= student.enrollment_code %></td>
+            <td><%= user_get_name student %></td>
+            <td><%= find_grades_for_student_lecture(student,@lecture).first.value unless find_grades_for_student_lecture(student,@lecture).empty? %></td>
+          </tr>
+
+      <% end %>
+    </table>
+    <br /><br />
+<% end %>

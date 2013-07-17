@@ -1,30 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Id:</b>
-  <%= @lecture.id %>
-</p>
+  <h1><%= I18n.t('fray.models.lecture') %></h1>
 
-<p>
+<p class="field">
   <b>Group:</b>
-  <%= @lecture.group_id %>
+  <%= group_get_name @lecture.group %>
 </p>
 
-<p>
+<p class="field">
   <b>Schedule:</b>
-  <%= @lecture.schedule_id %>
+  <%= humanize_schedule @lecture.schedule %>
 </p>
 
-<p>
+<p class="field">
   <b>Subject:</b>
-  <%= @lecture.subject_id %>
+  <%= @lecture.subject.name %>
 </p>
+
+<p class="field">
+  <b>Teacher:</b>
+  <%= user_get_name @lecture.teacher %>
+</p>
+
+<%= render 'show_students_table' %>
 
 <p>
-  <b>Teacher:</b>
-  <%= @lecture.teacher_id %>
-</p>
-
-
 <%= link_to 'Edit', edit_lecture_path(@lecture) %> |
-<%= link_to 'Back', lectures_path %>
+<%= link_to 'Back', '/lectures/manage' %>
+</p>

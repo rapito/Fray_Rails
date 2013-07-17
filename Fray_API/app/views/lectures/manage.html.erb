@@ -17,7 +17,7 @@
 <% @lectures.each do |lecture| %>
   <tr>
     <td><%= lecture.group.name %></td>
-    <td><%= lecture.schedule.day + ', ' + I18n.l( lecture.schedule.start_time, :format => "%I.%m %P").to_s + ' - ' + I18n.l( lecture.schedule.end_time, :format => "%I.%m %p") %></td>
+    <td><%= humanize_schedule lecture.schedule %></td>
     <td><%= lecture.subject.name %></td>
     <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
 
@@ -34,7 +34,5 @@
 <% end %>
 
 <%= will_paginate @posts %>
-
-<%= render 'assign_students' %>
 
 <!--<%# link_to 'New Lecture', new_lecture_path %>-->
