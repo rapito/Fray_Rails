@@ -92,6 +92,8 @@
             </ul>
           </div>
 
+          <% if current_user and current_user.kind === 'Teacher'%>
+
           <div class="btn-group">
             <button class="btn dropdown-toggle" data-toggle="dropdown"> <%= I18n.t('fray.buttons.manage').to_s  %> <span class="caret"></span></button>
             <ul class="dropdown-menu">
@@ -118,6 +120,8 @@
                 <li><%= link_to I18n.t('fray.assign')+' '+I18n.t('fray.models.student') , '/groups/manage' %></li>
             </ul>
           </div>
+
+          <% end %>
 
         </div>
 
