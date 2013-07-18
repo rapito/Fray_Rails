@@ -59,7 +59,7 @@
     <file path="/institutions_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373117345598" ignored="false" />
     <file path="/grades_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374119746246" ignored="false" />
     <file path="/application.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373828949241" ignored="false" />
-    <file path="/student.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374128025369" ignored="false" />
+    <file path="/student.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374130035506" ignored="false" />
     <file path="/teacher.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374039042865" ignored="false" />
     <file path="/groups_helper.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374045611305" ignored="false" />
     <file path="/users_helper.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373933714673" ignored="false" />
@@ -121,7 +121,7 @@
     <file path="/faker.rake" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374043993048" ignored="false" />
     <file path="/stages_helper.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374040965644" ignored="false" />
     <file path="/periods_helper.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374041062137" ignored="false" />
-    <file path="/_show_students_table.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374045387023" ignored="false" />
+    <file path="/_show_students_table.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374129886340" ignored="false" />
     <file path="/schedules_helper.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374045792505" ignored="false" />
     <file path="/spreadsheeter.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374106672148" ignored="false" />
     <file path="/20130717064633_lecture_student.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374103957544" ignored="false" />
@@ -161,7 +161,52 @@
       <file leaf-file-name="student.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/student.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="39" selection-start="1156" selection-end="1156" vertical-scroll-proportion="1.4711539">
+            <state line="49" column="21" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.6838488">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_assign_students.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/groups/_assign_students.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.8846154">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_show_students_table.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/groups/_show_students_table.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="11" selection-start="21" selection-end="21" vertical-scroll-proportion="-1.3076923">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/lectures/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.884615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_show_students_table.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="70" selection-start="543" selection-end="543" vertical-scroll-proportion="-9.423077">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/groups/show.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="0" selection-start="514" selection-end="514" vertical-scroll-proportion="-15.038462">
               <folding />
             </state>
           </provider>
@@ -185,15 +230,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/grade_weights/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="-3.6538463">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="grade.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/grade.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -212,15 +248,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="13" selection-start="1098" selection-end="1098" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -234,8 +261,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/grades/manage.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/grade_weights/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/grade_weights/index.html.erb" />
         <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/es.yml" />
@@ -249,6 +274,8 @@
         <option value="$PROJECT_DIR$/db/migrate/20130718024635_create_grade_weights.rb" />
         <option value="$PROJECT_DIR$/app/controllers/grade_weights_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/grade_weights/close_grade.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/groups/_show_students_table.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb" />
         <option value="$PROJECT_DIR$/app/models/student.rb" />
       </list>
     </option>
@@ -443,7 +470,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="groups" />
+              <option name="myItemId" value="lectures" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -465,7 +492,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="grade_weights" />
+              <option name="myItemId" value="groups" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1022,45 +1049,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="47" selection-start="531" selection-end="531" vertical-scroll-proportion="-7.8461537">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/grades_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="23" selection-start="1731" selection-end="1731" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1092#1354#0" expanded="false" />
-            <element signature="e#2402#3000#0" expanded="false" />
-            <element signature="e#3010#3432#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="20" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="55" selection-start="960" selection-end="960" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20130718024635_create_grade_weights.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="42" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
@@ -1103,13 +1091,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/grade_weights_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/a8f90a40/e1be254a-f7a6-4e38-bc1d-d56ff523f09e/fray..grade_weights">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1127,9 +1108,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/lectures/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="10.884615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/group.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/grade_weights_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="70" selection-start="543" selection-end="543" vertical-scroll-proportion="-9.423077">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="0" selection-start="514" selection-end="514" vertical-scroll-proportion="-15.038462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/_assign_students.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="5.8846154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/groups/_show_students_table.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="11" selection-start="21" selection-end="21" vertical-scroll-proportion="-1.3076923">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/student.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="39" selection-start="1156" selection-end="1156" vertical-scroll-proportion="1.4711539">
+        <state line="49" column="21" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.6838488">
           <folding />
         </state>
       </provider>

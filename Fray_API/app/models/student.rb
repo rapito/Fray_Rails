@@ -12,7 +12,6 @@ class Student < User
 
   attr_accessor :group_id
 
-
   def self.without_group
     Student.all.reject{|x| x.lectures.size > 0}
   end
@@ -27,6 +26,44 @@ class Student < User
     val = 0;
     Grade.where(:lecture_id => lecture_id, :student_id => id).each  { |v| val+=v.value }
     val
+  end
+
+
+  def self.top_ten group
+    students = group.students
+    acc ={}
+    students.each {|x| acc[x.id]=0}
+
+    group.lectures.each do |x|
+      students.each do |s|
+        acc[s.id] += s.get_accumulated_weighted_score x.id
+      end
+
+    end
+    students.each do |s|
+      acc[s.id] /= group.lectures.size
+    end
+
+    students[0,9]
+
+  end
+
+  def self.top_ten_for_lecture lecture
+    students = lecture.students
+    acc ={}
+    students.each {|x| acc[x.id]=0}
+
+
+    students.each do |s|
+      acc[s.id] += s.get_accumulated_weighted_score lecture.id
+    end
+
+    students.each do |s|
+      acc[s.id] /= group.lectures.size
+    end
+
+    students[0,9]
+
   end
 
   def get_accumulated_weighted_score lecture_id

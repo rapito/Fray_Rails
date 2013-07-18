@@ -1,4 +1,5 @@
 <br><br>
+<h2>Top Ten</h2>
 
 <% if @lecture.students.size>0 %>
     <table>
@@ -13,7 +14,7 @@
             <td></td>
             <td><%= student.enrollment_code %></td>
             <td><%= user_get_name student %></td>
-            <td><%= find_grades_for_student_lecture(student,@lecture).first.value unless find_grades_for_student_lecture(student,@lecture).empty? %></td>
+            <td><%= student.get_accumulated_weighted_score @lecture.id %></td>
           </tr>
 
       <% end %>

@@ -1,12 +1,13 @@
 <br><br>
 
-<% if @group.students.size>0 %>
+<h2>Top Ten</h2>
+<% if Student.top_ten(@group).size>0 %>
     <table>
       <th><%= I18n.t('fray.buttons.students') %></th>
       <th><%= I18n.t('fray.users.name') %></th>
       <th><%= I18n.t('fray.users.enrollment_code') %></th>
 
-      <% @group.students.each do |student| %>
+      <% Student.top_ten(@group).each do |student| %>
 
           <tr>
             <td></td>
