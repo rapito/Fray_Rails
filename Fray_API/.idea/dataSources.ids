@@ -3228,6 +3228,15 @@
     <schema name="" catalog="todaviado"/>
     <schema name="" catalog="toki"/>
     <schema name="" catalog="twitter_clone"/>
+    <table name="grade_weights" schema="" catalog="fray" type="TABLE">
+      <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="grade_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="weight" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <index name="unique_grade_id" unique="true" columns="grade_id"/>
+    </table>
     <table name="grades" schema="" catalog="fray" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="comment" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
@@ -3324,6 +3333,7 @@
     <table name="subjects_teachers" schema="" catalog="fray" type="TABLE">
       <column name="subject_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="teacher_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="subject_id,teacher_id"/>
     </table>
     <table name="tests" schema="" catalog="fray" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

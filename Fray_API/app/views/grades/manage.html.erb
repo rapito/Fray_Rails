@@ -71,8 +71,9 @@
           <tr>
             <td><%= student.enrollment_code %></td>
             <td><%= user_get_name student %></td>
-            <td><%= find_grades_for_student_lecture(student,@lecture).first.value unless find_grades_for_student_lecture(student,@lecture).empty? %></td>
+            <td><%= student.get_accumulated_score @lecture.id %></td>
             <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') , '/grades/new/'+student.id.to_s+'/'+@lecture.id.to_s %></td>
+            <td><%= link_to I18n.t('fray.buttons.close') + ' ' + I18n.t('fray.models.grades') , '/grades_weight/new/'+student.id.to_s+'/'+@lecture.id.to_s %></td>
           </tr>
       <% end %>
     </table>

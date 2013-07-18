@@ -63,10 +63,10 @@
 
         <div>
           <% flash.each do |key, value| %>
-              <div class="alert <%= if key.to_s=='success'
-                                      'alert-success'
-                                      else
+              <div class="alert <%= if key.to_s=='error'
                                       'alert-error'
+                                      else
+                                      'alert-success'
                                     end %>">
                 <a href="#" data-dismiss="alert" class="close">×</a>
                 <%= value %>

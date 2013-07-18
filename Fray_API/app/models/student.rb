@@ -23,6 +23,28 @@ class Student < User
       end
   end
 
+  def get_accumulated_score lecture_id
+    val = 0;
+    Grade.where(:lecture_id => lecture_id, :student_id => id).each  { |v| val+=v.value }
+    val
+  end
+
+  def get_accumulated_weighted_score lecture_id
+    val = 0
+    Grade.where(:lecture_id => lecture_id, :student_id => id).each  do |v|
+      if not v.grade_weight.eql? nil
+        val+=v.value*(v.grade_weight.weight/100.0)
+      else
+        val+=v.value
+      end
+    end
+    val
+  end
+
+  def get_grades_for lecture_id
+    Grade.where(:lecture_id => lecture_id, :student_id => id)
+  end
+
   validates :enrollment_code, :presence => true #,:format => { :with => /\A( [0-9]{3,} )\Z/i
   #validates :enrollment_outer_code, :format => { :with => /\A( [0-9]{3,} )\Z/i
   validates :group_id,        :presence => true #,:format => { :with => /\A( [0-9]{3,} )\Z/i

@@ -13,6 +13,7 @@ es:
     assign: Asignar
     report: Reporte
     suffix: Sufijo
+    weight: Peso
 
     name: Nombre
 
@@ -56,6 +57,7 @@ es:
       sign_in: Iniciar Sesión
       username: Nombre de usuario
       password: Contraseña
+      close: Cerrar
       processes: Procesos
       process:
         set_grades: Poner Notas

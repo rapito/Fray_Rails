@@ -1,0 +1,27 @@
+<div id="assign_weight_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%= I18n.t('fray.assign') + ' ' + I18n.t('fray.weight') %> </h3>
+  </div>
+  <form action="/grades_weight/assign_weight/" method="get">
+    <%= fields_for :weight do |f| %>
+
+    <div class="modal-body">
+
+
+      <%= f.hidden_field :grade_id %>
+
+      <%= f.label I18n.t('fray.weight') %>
+      <%= f.select :weight,(5..15).collect{|x| x*10}.collect {|x| [x.to_s+' %',x]} %>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="submit" class="btn btn-primary"><%= I18n.t('fray.assign') %></button>
+      <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+    </div>
+
+    <% end %>
+  </form>
+</div>
+

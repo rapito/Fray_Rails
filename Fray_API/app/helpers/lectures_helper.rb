@@ -1,6 +1,7 @@
 module LecturesHelper
 
-  def get_lecture_report
+  def get_accumulated_score lecture
+    score = 0
 
 
   end

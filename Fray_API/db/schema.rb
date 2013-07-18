@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130717064703) do
+ActiveRecord::Schema.define(:version => 20130718024635) do
+
+  create_table "grade_weights", :force => true do |t|
+    t.integer  "grade_id"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "grade_weights", ["grade_id"], :name => "unique_grade_id", :unique => true
 
   create_table "grades", :force => true do |t|
     t.string   "comment"

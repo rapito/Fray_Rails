@@ -13,6 +13,7 @@ en:
     assign: Assign
     report: Report
     suffix: Suffix
+    weight: Weight
 
     name: Name
 
@@ -56,6 +57,7 @@ en:
       username: Username
       password: Password
       manage: Management
+      close: Close
       processes: Processes
       process:
         set_grades: Set grades

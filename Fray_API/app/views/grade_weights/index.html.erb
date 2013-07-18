@@ -1,0 +1,27 @@
+<h1>Assign Weights</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Grade</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @grades.each do |grade_weight| %>
+  <tr>
+    <td><%= grade_weight.id %></td>
+    <td><%= grade_weight.commnet %></td>
+    <td><%= grade_weight.value %></td>
+    <td><%= link_to 'Show', grade_weight %></td>
+    <td><%= link_to 'Edit', edit_grade_weight_path(grade_weight) %></td>
+    <td><%= link_to 'Destroy', grade_weight, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Grade weight', new_grade_weight_path %>

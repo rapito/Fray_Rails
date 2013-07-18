@@ -1,6 +1,4 @@
 class GradesController < ApplicationController
-  # GET /grades
-  # GET /grades.json
   def index
     @grades = Grade.all
 
@@ -10,8 +8,6 @@ class GradesController < ApplicationController
     end
   end
 
-  # GET /grades/manage
-  # GET /grades/manage.json
   def manage
     @groups = Group.all
     @grades = Grade.all
@@ -46,9 +42,6 @@ class GradesController < ApplicationController
     end
   end
 
-
-  # GET /grades/1
-  # GET /grades/1.json
   def show
     @grade = Grade.find(params[:id])
 
@@ -58,8 +51,6 @@ class GradesController < ApplicationController
     end
   end
 
-  # GET /grades/new
-  # GET /grades/new.json
   def new
     @grade = Grade.new
 
@@ -80,29 +71,62 @@ class GradesController < ApplicationController
     end
   end
 
-  # GET /grades/1/edit
   def edit
     @grade = Grade.find(params[:id])
   end
 
-  # POST /grades
-  # POST /grades.json
-  def create
+  def close_grade
     @grade = Grade.new(params[:grade])
+    params.each do |x,v|
+      puts x+'-'+v
+    end
 
-    respond_to do |format|
-      if @grade.save
-        format.html { redirect_to(@grade, :notice => 'Grade was successfully created.') }
-        format.json  { render :json => @grade, :status => :created, :location => @grade }
-      else
-        format.html { render :action => "new" }
-        format.json  { render :json => @grade.errors, :status => :unprocessable_entity }
+    uri = '/grades/manage/'+@grade.lecture.group.id.to_s+'/'+@grade.lecture.id.to_s
+
+    if @grade.value and @grade.value + @grade.student.get_accumulated_score(@grade.lecture.id) > 100
+
+      redirect_to(uri, :flash => {:error => "No se puede pasar de 100"})
+
+    else
+
+      respond_to do |format|
+        if @grade.save
+          format.html { redirect_to(uri, :notice => 'Grade was successfully created.') }
+          format.json  { render :json => @grade, :status => :created, :location => @grade }
+        else
+          format.html { render :action => "new" }
+          format.json  { render :json => @grade.errors, :status => :unprocessable_entity }
+        end
       end
     end
   end
 
-  # PUT /grades/1
-  # PUT /grades/1.json
+  def create
+    @grade = Grade.new(params[:grade])
+    params.each do |x|
+      puts x
+    end
+
+    uri = '/grades/manage/'+@grade.lecture.group.id.to_s+'/'+@grade.lecture.id.to_s
+
+    if @grade.value and @grade.value + @grade.student.get_accumulated_score(@grade.lecture.id) > 100
+
+      redirect_to(uri, :flash => {:error => "No se puede pasar de 100"})
+
+    else
+
+      respond_to do |format|
+        if @grade.save
+          format.html { redirect_to(uri, :notice => 'Grade was successfully created.') }
+          format.json  { render :json => @grade, :status => :created, :location => @grade }
+        else
+          format.html { render :action => "new" }
+          format.json  { render :json => @grade.errors, :status => :unprocessable_entity }
+        end
+      end
+    end
+  end
+
   def update
     @grade = Grade.find(params[:id])
 
@@ -117,8 +141,6 @@ class GradesController < ApplicationController
     end
   end
 
-  # DELETE /grades/1
-  # DELETE /grades/1.json
   def destroy
     @grade = Grade.find(params[:id])
     @grade.destroy

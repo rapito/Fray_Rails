@@ -1,0 +1,34 @@
+<h1>Assign Weights</h1>
+
+<table>
+  <tr>
+    <th>Grade</th>
+    <th>Value</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @grades.each do |grade| %>
+      <tr>
+        <td><%= grade.comment %></td>
+        <td><%= grade.value %></td>
+        <td><%= (GradeWeight.where(:grade_id => grade.id).first.weight.to_s + ' %') unless  GradeWeight.where(:grade_id => grade.id).size<=0 %></td>
+        <td>
+          <a onclick="assignWeightToGrade(<%= grade.id %>)" href="#assign_weight_modal" role="button" data-toggle="modal" >
+            <%= I18n.t('fray.assign') +' '+ pluralize_this(I18n.t('fray.weight')) %>
+          </a>
+        </td>
+        <td><%= link_to 'Destroy', GradeWeight.where(:grade_id => grade.id).first, :confirm => 'Are you sure?', :method => :delete %></td>
+
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+<h3>Score: <%= @student.get_accumulated_score @lecture.id%> <- Applied Weight ->
+  <%= @student.get_accumulated_weighted_score @lecture.id  %>
+</h3>
+
+<%= render 'assign_weights' %>

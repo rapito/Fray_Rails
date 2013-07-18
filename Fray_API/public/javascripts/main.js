@@ -28,3 +28,9 @@ var assignLectureToAddStudentForm = function(val)
 {
     $('#student_group_id').attr('value',val);
 }
+
+var assignWeightToGrade = function(val)
+{
+    $('#weight_grade_id').attr('value',val);
+}
+
