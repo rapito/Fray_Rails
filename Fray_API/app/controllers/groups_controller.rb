@@ -1,6 +1,5 @@
 class GroupsController < ApplicationController
-  # GET /groups
-  # GET /groups.json
+
   def index
     @groups = Group.paginate(:page => params[:page], :per_page => 10)
 
@@ -14,8 +13,17 @@ class GroupsController < ApplicationController
     @student = Student.find(params[:student][:id])
     @group = Group.find(params[:student][:group_id])
 
-    @student.lectures << @group.lectures
-    redirect_to('/groups/manage', :notice => I18n.t('fray.models.student')+' '+I18n.t('assigned_succes') )
+    flash = {:success => (I18n.t('fray.models.student')+' '+I18n.t('fray.buttons.process.assign_success'))}
+
+    begin
+      @student.lectures << @group.lectures
+    rescue
+      flash = {:error => (I18n.t('fray.models.student')+' '+I18n.t('fray.buttons.process.assign_failed'))}
+    end
+
+
+    redirect_to ('/groups/manage'), :flash => flash
+
   end
 
   def manage
@@ -28,8 +36,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # GET /groups/1
-  # GET /groups/1.json
   def show
     @group = Group.find(params[:id])
 
@@ -39,8 +45,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # GET /groups/new
-  # GET /groups/new.json
   def new
     @group = Group.new
 
@@ -50,13 +54,10 @@ class GroupsController < ApplicationController
     end
   end
 
-  # GET /groups/1/edit
   def edit
     @group = Group.find(params[:id])
   end
 
-  # POST /groups
-  # POST /groups.json
   def create
     @group = Group.new(params[:group])
 
@@ -71,8 +72,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # PUT /groups/1
-  # PUT /groups/1.json
   def update
     @group = Group.find(params[:id])
 
@@ -87,8 +86,6 @@ class GroupsController < ApplicationController
     end
   end
 
-  # DELETE /groups/1
-  # DELETE /groups/1.json
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
@@ -98,4 +95,11 @@ class GroupsController < ApplicationController
       format.json  { head :ok }
     end
   end
+
+  def report
+    spreadsheet = Spreadsheeter.report_for_groups
+
+    send_data spreadsheet.string, :filename => I18n.t('fray.models.group')+'s_'+I18n.t('fray.report')+".xls", :type =>  "application/vnd.ms-excel"
+  end
+
 end

@@ -1,8 +1,7 @@
 class SchedulesController < ApplicationController
-  # GET /schedules
-  # GET /schedules.json
+
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +9,8 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/manage
-  # GET /schedules/manage.json
   def manage
-    @schedules = Schedule.all
+    @schedules = Schedule.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,8 +18,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1
-  # GET /schedules/1.json
   def show
     @schedule = Schedule.find(params[:id])
 
@@ -32,8 +27,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/new
-  # GET /schedules/new.json
   def new
     @schedule = Schedule.new
 
@@ -43,13 +36,10 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # GET /schedules/1/edit
   def edit
     @schedule = Schedule.find(params[:id])
   end
 
-  # POST /schedules
-  # POST /schedules.json
   def create
     @schedule = Schedule.new(params[:schedule])
 
@@ -64,8 +54,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # PUT /schedules/1
-  # PUT /schedules/1.json
   def update
     @schedule = Schedule.find(params[:id])
 
@@ -80,8 +68,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  # DELETE /schedules/1
-  # DELETE /schedules/1.json
   def destroy
     @schedule = Schedule.find(params[:id])
     @schedule.destroy

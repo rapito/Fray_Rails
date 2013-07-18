@@ -1,8 +1,9 @@
 <h1>Listing periods</h1>
 
+<p><a href="<%= new_period_path %>"class="btn btn-small btn-primary pull-right down_pusher"><%= I18n.t('fray.buttons.add_new') %></a></p>
+
 <table>
   <tr>
-    <th>Id</th>
     <th>Init date</th>
     <th>End date</th>
     <th>Type</th>
@@ -13,7 +14,6 @@
 
 <% @periods.each do |period| %>
   <tr>
-    <td><%= period.id %></td>
     <td><%= period.init_date %></td>
     <td><%= period.end_date %></td>
     <td><%= period.kind %></td>
@@ -24,6 +24,9 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Period', new_period_path %>
+<% if @periods.length > 5  %>
+    <p><a href="<%= new_period_path %>"class="btn btn-small btn-primary "><%= I18n.t('fray.buttons.add_new') %></a></p>
+<% end %>
+
+<%= will_paginate @posts %>

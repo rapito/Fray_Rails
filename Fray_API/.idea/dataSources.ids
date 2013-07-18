@@ -3272,6 +3272,7 @@
     <table name="lectures_students" schema="" catalog="fray" type="TABLE">
       <column name="lecture_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
       <column name="student_id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="lecture_id,student_id"/>
     </table>
     <table name="periods" schema="" catalog="fray" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

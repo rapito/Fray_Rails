@@ -52,22 +52,28 @@
         </div>
 
     </div>
-    <div class="container">
-      <%if not @error.nil? %>
-          <div class="alert alert-error">@error</div>
-      <% else %>
-          <%if not @success.nil? %>
-              <div class="alert alert-success">@success</div>
-          <% end %>
-      <% end %>
-      <!--<p class="notice"><%# notice %></p>-->
-      <!--<p class="alert"><%#   alert %></p>-->
-    </div>
+
+
+
 
 
     <div id="fray_container">
       <!--<div id="header_bg" ></div>-->
       <div id="fray_header">
+
+        <div>
+          <% flash.each do |key, value| %>
+              <div class="alert <%= if key.to_s=='success'
+                                      'alert-success'
+                                      else
+                                      'alert-error'
+                                    end %>">
+                <a href="#" data-dismiss="alert" class="close">×</a>
+                <%= value %>
+              </div>
+          <% end %>
+        </div>
+
         <img src="/images/logo.jpg">
         <h1><%= I18n.t('fray.title').to_s  %></h1>
         <h3><%= I18n.t('fray.subtitle').to_s  %></h3>
@@ -95,7 +101,7 @@
               <li><a href="/students/manage"><%= I18n.t('fray.buttons.students').to_s  %></a></li>
               <li><a href="/subjects/manage"><%= I18n.t('fray.buttons.subjects').to_s  %></a></li>
               <li class="divider"></li>
-              <li><a href="/institutions/manage"><%= I18n.t('fray.buttons.institutions').to_s  %></a></li>
+              <!--<li><a href="/institutions/manage"><%# I18n.t('fray.buttons.institutions').to_s  %></a></li>-->
               <li><a href="/stages/manage"><%= I18n.t('fray.buttons.stages').to_s  %></a></li>
               <li><a href="/periods/manage"><%= I18n.t('fray.buttons.periods').to_s  %></a></li>
               <li><a href="/schedules/manage"><%= I18n.t('fray.buttons.schedules').to_s  %></a></li>
@@ -109,6 +115,7 @@
             <ul class="dropdown-menu">
                 <li><%= link_to I18n.t('fray.buttons.process.set_grades') , '/grades/manage' %></li>
                 <li><%= link_to I18n.t('fray.buttons.process.register_student') , new_student_path %></li>
+                <li><%= link_to I18n.t('fray.assign')+' '+I18n.t('fray.models.student') , '/groups/manage' %></li>
             </ul>
           </div>
 

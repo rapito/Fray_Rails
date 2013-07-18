@@ -12,6 +12,11 @@ class Student < User
 
   attr_accessor :group_id
 
+
+  def self.without_group
+    Student.all.reject{|x| x.lectures.size > 0}
+  end
+
   def assign_to_group
      Group.find(group_id).lectures.each do |x|
         x.students << self

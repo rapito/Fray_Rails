@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
-  # GET /students
-  # GET /students.xml
+
   def index
     @students = Student.paginate(:page => params[:page], :per_page => 10)
 
@@ -11,7 +10,7 @@ class StudentsController < ApplicationController
   end
 
   def manage
-    @students = Student.all
+    @students = Student.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -19,8 +18,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  # GET /students/1
-  # GET /students/1.xml
   def show
     @student = Student.find(params[:id])
 
@@ -30,8 +27,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  # GET /students/new
-  # GET /students/new.xml
   def new
     @student = Student.new
 
@@ -41,13 +36,10 @@ class StudentsController < ApplicationController
     end
   end
 
-  # GET /students/1/edit
   def edit
     @student = Student.find(params[:id])
   end
 
-  # POST /students
-  # POST /students.xml
   def create
     begin
       @student = Student.new(params[:student])
@@ -67,8 +59,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  # PUT /students/1
-  # PUT /students/1.xml
   def update
     @student = Student.find(params[:id])
 
@@ -83,8 +73,6 @@ class StudentsController < ApplicationController
     end
   end
 
-  # DELETE /students/1
-  # DELETE /students/1.xml
   def destroy
     @student = Student.find(params[:id])
     @student.destroy
@@ -93,5 +81,10 @@ class StudentsController < ApplicationController
       format.html { redirect_to(students_url) }
       format.xml  { head :ok }
     end
+  end
+
+  def report
+    spreadsheet = Spreadsheeter.report_for_students
+    send_data spreadsheet.string, :filename => I18n.t('fray.models.student')+'_'+I18n.t('fray.report')+".xls", :type =>  "application/vnd.ms-excel"
   end
 end

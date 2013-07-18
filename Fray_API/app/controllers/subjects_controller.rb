@@ -1,8 +1,6 @@
 class SubjectsController < ApplicationController
-  # GET /subjects
-  # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = Subject.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +8,8 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/manage
-  # GET /subjects/manage.json
   def manage
-    @subjects = Subject.all
+    @subjects = Subject.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,8 +17,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/1
-  # GET /subjects/1.json
   def show
     @subject = Subject.find(params[:id])
 
@@ -32,8 +26,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/new
-  # GET /subjects/new.json
   def new
     @subject = Subject.new
 
@@ -43,13 +35,10 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # GET /subjects/1/edit
   def edit
     @subject = Subject.find(params[:id])
   end
 
-  # POST /subjects
-  # POST /subjects.json
   def create
     @subject = Subject.new(params[:subject])
 
@@ -64,8 +53,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # PUT /subjects/1
-  # PUT /subjects/1.json
   def update
     @subject = Subject.find(params[:id])
 
@@ -80,8 +67,6 @@ class SubjectsController < ApplicationController
     end
   end
 
-  # DELETE /subjects/1
-  # DELETE /subjects/1.json
   def destroy
     @subject = Subject.find(params[:id])
     @subject.destroy
@@ -90,5 +75,10 @@ class SubjectsController < ApplicationController
       format.html { redirect_to(subjects_url) }
       format.json  { head :ok }
     end
+  end
+
+  def report
+    spreadsheet = Spreadsheeter.report_for_subjects
+    send_data spreadsheet.string, :filename => I18n.t('fray.models.subject')+'s_'+I18n.t('fray.report')+".xls", :type =>  "application/vnd.ms-excel"
   end
 end

@@ -12,12 +12,22 @@ en:
     new_f: New
     assign: Assign
     report: Report
+    suffix: Suffix
 
     name: Name
 
     users:
       name: Name
       enrollment_code: Enrollment Code
+      phone: Phone
+      address: Address
+      nationality: Nationality
+      registration_date: Registration Date
+      active: Active
+
+      studies: Studies
+      salary: Salary
+      identification_card: Identification Card
 
     welcome:
       title: Welcome to the School's ASM Web Application
@@ -51,7 +61,8 @@ en:
         set_grades: Set grades
         register_student: Register Student
         choose_group: Choose a Group
-        assign_succes: was succesfully assigned.
+        assign_success: was succesfully assigned.
+        assign_failed: couldn't be assigned.
 
 
       add_new: Add New

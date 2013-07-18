@@ -2,7 +2,7 @@ class PeriodsController < ApplicationController
   # GET /periods
   # GET /periods.json
   def index
-    @periods = Period.all
+    @periods = Period.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class PeriodsController < ApplicationController
   # GET /periods/manage
   # GET /periods/manage.json
   def manage
-    @periods = Period.all
+    @periods = Period.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

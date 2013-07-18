@@ -10,14 +10,20 @@ FrayAcademicSystem::Application.routes.draw do
 
   end
 
+  get "groups/report", to: "groups#report"
   get "groups/assign_student", to: "groups#assign_student"
   get "groups/manage", to: "groups#manage"
+
+  get "teachers/report", to: "teachers#report"
   get "teachers/manage", to: "teachers#manage"
+
+  get "students/report", to: "students#report"
   get "students/manage", to: "students#manage"
 
   get "lectures/manage", to: "lectures#manage"
   get "lectures/report", to: "lectures#report"
 
+  get "subjects/report", to: "subjects#report"
   get "subjects/manage", to: "subjects#manage"
   get "institutions/manage", to: "institutions#manage"
   get "stages/manage", to: "stages#manage"

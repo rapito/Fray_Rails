@@ -2,7 +2,7 @@ class StagesController < ApplicationController
   # GET /stages
   # GET /stages.json
   def index
-    @stages = Stage.all
+    @stages = Stage.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class StagesController < ApplicationController
   # GET /stages/manage
   # GET /stages/manage.json
   def manage
-    @stages = Stage.all
+    @stages = Stage.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

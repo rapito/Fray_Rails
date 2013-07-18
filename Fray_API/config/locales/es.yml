@@ -12,6 +12,22 @@ es:
     new_f: Nueva
     assign: Asignar
     report: Reporte
+    suffix: Sufijo
+
+    name: Nombre
+
+    users:
+      name: Nombre
+      enrollment_code: Matricula
+      phone: Teléfono
+      address: Dirección
+      nationality: Nacionalidad
+      registration_date: Fecha de registro
+      active: Activo
+
+      studies: Estudios
+      salary: Salario
+      identification_card: Cedula
 
     welcome:
       title: Bienvenido
@@ -45,7 +61,8 @@ es:
         set_grades: Poner Notas
         register_student: Inscribir Estudiante
         choose_group: Elegir Sección
-        assign_succes: fue asignado satisfactoriamente.
+        assign_success: fue asignado satisfactoriamente.
+        assign_failed: no pude ser asignado.
 
 
       add_new: Agregar Nuevo

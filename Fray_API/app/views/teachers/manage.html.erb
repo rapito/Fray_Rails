@@ -35,8 +35,9 @@
 </table>
 
 <% if @teachers.length > 5  %>
-    <p><a href="<%= new_teacher_path %>" class="btn btn-small btn-primary pull-right"><%= I18n.t('fray.buttons.add_new') %></a></p>
+    <p><a href="<%= new_teacher_path %>" class="btn btn-small btn-primary"><%= I18n.t('fray.buttons.add_new') %></a></p>
 <% end %>
 
-<br />
+
+<%= will_paginate @posts %>
 
