@@ -151,7 +151,7 @@
 
 		over: false,
 		inDrag: false,
-		isDragged: function(){return false},
+		isDragged: function(){return 'asda'},
 
 		showTooltip: function(){
 			this.tooltip.addClass('in');
@@ -333,6 +333,9 @@
 
         reduceValue: function() {
             this.setValue(this.value[0]-0.001);
+        },
+        addValue: function() {
+            this.setValue(this.value[0]+0.001);
         },
 
 		setValue: function(val) {

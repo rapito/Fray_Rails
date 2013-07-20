@@ -22,42 +22,60 @@ $().ready(function()
     $('#error_explanation h2').attr('class','alert alert-error');
     $('#error_explanation ul li').attr('class','alert alert-error');
 
+
+
+
     $('.wslider').slider('setValue',0)
         .on('slide', function(ev){
-            slidee(this);
-        });
-    setInterval(function(){
-        var sliders = $('.wslider');
+            var sliders = $('.wslider');
+            var inputs = $('.slider-weight');
+            for(var i=0;i<sliders.length;i++)
+            {
+                inputs[i].value = getSliderValue(i);
 
-        for(var i =0;i<sliders.length;i++)
+            }
+        });
+
+    $('.slider-weight').change(function()
+    {
+        var sliders = $('.wslider');
+        var inputs = $('.slider-weight');
+        for(var i=0;i<sliders.length;i++)
         {
             var sl = $(sliders[i]);
-//            console.log ( sl.slider('isDragged') );
-            if(sl.slider('isDragged') == true)
-            {
-                console.log(5);
-            }
+            sl.slider('setValue',inputs[i].value);
+
         }
-    },1)
+    });
+//            var sliders = $('.wslider');
+//
+//            for(var i =0;i<sliders.length;i++)
+//            {
+//                var sl = $(sliders[i]);
+//                console.log();
+//                if(sliders[i]!=this)
+//                {
+//
+//                    var val = getSliderValue(i);
+//                    var amount = 0.005;
+//                    if(val<this.value)
+//                    {
+//                        sl.slider('setValue',val-amount);
+//                    }
+//                    else if(getSliderValue(i)>this.value)
+//                    {
+//                        sl.slider('setValue',val+amount);
+//                    }
+//                }
+//            }
+//        });
+
 
 });
 
-var slidee = function(x)
+var getSliderValue = function(i)
 {
-    var sliders = $('.wslider');
-
-    for(var i =0;i<sliders.length;i++)
-    {
-        var sl = $(sliders[i]);
-        if(sliders[i]!=x)
-        {
-
-            if(sl.slider('getValue')>this.value)
-            {
-                sl.slider('reduceValue');
-            }
-        }
-    }
+    return parseFloat(parseFloat($('.tooltip-inner')[i].innerHTML).toFixed(4));
 }
 
 var assignLectureToAddStudentForm = function(val)
