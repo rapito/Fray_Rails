@@ -1,0 +1,27 @@
+<% if @lectures %>
+
+    <h2/><%=  I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.lecture') %></h2>
+
+    <table>
+      <tr>
+        <th>Group</th>
+        <th>Schedule</th>
+        <th>Subject</th>
+        <th>Teacher</th>
+        <th></th>
+
+      </tr>
+
+      <% @lectures.each do |lecture| %>
+          <tr>
+            <td><%= lecture.group.name %></td>
+            <td><%= lecture.schedule.day + ', ' + I18n.l( lecture.schedule.start_time, :format => "%I.%m %P").to_s + ' - ' + I18n.l( lecture.schedule.end_time, :format => "%I.%m %p") %></td>
+            <td><%= lecture.subject.name %></td>
+            <td><%= lecture.teacher.first_name + ' '+  lecture.teacher.first_last_name %></td>
+            <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.lecture') , '/grades/manage/'+@group.id.to_s+'/'+lecture.id.to_s %></td>
+
+          </tr>
+      <% end %>
+    </table>
+
+<% end %>

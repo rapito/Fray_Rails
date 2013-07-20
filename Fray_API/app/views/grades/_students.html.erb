@@ -1,0 +1,31 @@
+
+<% if @students %>
+    <h2/><%=  I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') %></h2>
+
+    <%= link_to I18n.t('fray.see')+' '+I18n.t('fray.overall') , '/grades/overall_lecture/'+@lecture.id.to_s,
+        :class => 'btn btn-warning down_pusher'
+    %>
+    <table class="9table table-striped table-hover table-condensed">
+      <tr>
+        <th>Enrollment code</th>
+        <th>Name</th>
+        <th>Grade</th>
+        <th></th>
+        <!--<th></th>-->
+      </tr>
+
+      <% @students.each do |student| %>
+          <tr>
+            <td><%= student.enrollment_code %></td>
+            <td><%= user_get_name student %></td>
+            <td><%= student.get_accumulated_score @lecture.id %></td>
+            <td><%= link_to I18n.t('fray.buttons.select') + ' ' + I18n.t('fray.models.student') , '/grades/new/'+student.id.to_s+'/'+@lecture.id.to_s %></td>
+          </tr>
+      <% end %>
+    </table>
+
+    <%= link_to I18n.t('fray.see')+' '+I18n.t('fray.overall') , '/grades/overall_lecture/'+@lecture.id.to_s,
+                :class => 'btn btn-warning down_pusher'
+    %>
+
+<% end %>

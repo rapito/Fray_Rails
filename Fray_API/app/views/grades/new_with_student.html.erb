@@ -2,4 +2,4 @@
 
 <%= render 'form_with_student' %>
 
-<%= link_to 'Back', grades_path %>
+<%= link_to 'Back', '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s %>

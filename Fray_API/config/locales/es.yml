@@ -14,6 +14,8 @@ es:
     report: Reporte
     suffix: Sufijo
     weight: Peso
+    see: Ver
+    overall: Promedio
 
     name: Nombre
 
@@ -59,6 +61,7 @@ es:
       password: Contraseña
       close: Cerrar
       processes: Procesos
+      back: Volver
       process:
         set_grades: Poner Notas
         register_student: Inscribir Estudiante
@@ -85,11 +88,11 @@ es:
 
     lecture_assignments:
            - Practica
-           - Asignaciones de Clase
+#           - Asignaciones de Clase
            - Pruebas Parciales
            - Exámen de Medio Término
            - Exámen Final
-           - Proyecto
+#           - Proyecto
     record_types:
            - Medico
            - Logros

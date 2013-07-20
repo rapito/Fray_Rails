@@ -75,29 +75,33 @@ class GradesController < ApplicationController
     @grade = Grade.find(params[:id])
   end
 
-  def close_grade
-    @grade = Grade.new(params[:grade])
-    params.each do |x,v|
-      puts x+'-'+v
+  def overall_lecture
+
+    @lecture = Lecture.find(params[:lecture_id])
+    @grades = []
+    @max_grades = []
+    rend = []
+    I18n.t('fray.lecture_assignments').each do |x|
+
+      if not rend.include? x
+        rend.push x
+        @accum = 0
+        local_grades = Grade.by_lecture(@lecture.id).by_assignment(x)
+
+        local_grades.each do |g|
+          @accum += g.value
+        end
+
+        @accum /=   local_grades.size ;
+
+        @max_grades.push local_grades.highest.first
+        @grades.push Grade.new(:value => @accum,:comment => x)
+      end
     end
 
-    uri = '/grades/manage/'+@grade.lecture.group.id.to_s+'/'+@grade.lecture.id.to_s
-
-    if @grade.value and @grade.value + @grade.student.get_accumulated_score(@grade.lecture.id) > 100
-
-      redirect_to(uri, :flash => {:error => "No se puede pasar de 100"})
-
-    else
-
-      respond_to do |format|
-        if @grade.save
-          format.html { redirect_to(uri, :notice => 'Grade was successfully created.') }
-          format.json  { render :json => @grade, :status => :created, :location => @grade }
-        else
-          format.html { render :action => "new" }
-          format.json  { render :json => @grade.errors, :status => :unprocessable_entity }
-        end
-      end
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json  { render :json => @grade }
     end
   end
 

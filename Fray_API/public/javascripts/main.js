@@ -22,6 +22,23 @@ $().ready(function()
     $('#error_explanation h2').attr('class','alert alert-error');
     $('#error_explanation ul li').attr('class','alert alert-error');
 
+    $('.weight_slider').slider('setValue',0)
+        .on('slide', function(ev){
+            var sliders = $('.slider');
+
+            for(var i =0;i<sliders.length;i++)
+            {
+                if(sliders[i]!=this)
+                {
+
+                    if(sliders[i].value>this.value)
+                    {
+                        sliders[i].value -= 0.01;
+                    }
+                }
+            }
+        });
+
 });
 
 var assignLectureToAddStudentForm = function(val)

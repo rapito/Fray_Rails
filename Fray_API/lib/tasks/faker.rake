@@ -164,6 +164,21 @@ namespace :db do
       end
       puts 'Finished with Students!'
 
+      puts 'Assigning Grades!'
+      Student.all.each do |s|
+        s.lectures.each do |l|
+          I18n.t('fray.lecture_assignments').each do |x|
+            grade = Grade.new
+            grade.value = rand(0..25)
+            grade.comment = x
+            grade.student = s
+            grade.lecture = l
+            grade.save!
+          end
+        end
+      end
+      puts 'Finished Assigning Grades'
+
       puts 'Creating Admin'
       s = Teacher.create(
           :kind => 'Teacher',
