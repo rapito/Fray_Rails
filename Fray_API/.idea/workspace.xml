@@ -139,7 +139,7 @@
     <file path="/overall_lecture.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374304191672" ignored="false" />
     <file path="/bootstrap-slider.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374300813318" ignored="false" />
     <file path="/slider.css" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374302634384" ignored="false" />
-    <file path="/overall_lecture_weight.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374348877506" ignored="false" />
+    <file path="/overall_lecture_weight.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374356804395" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,18 +179,6 @@
         <entry file="file://$PROJECT_DIR$/lib/tasks/faker.rake">
           <provider selected="true" editor-type-id="text-editor">
             <state line="171" column="33" selection-start="5621" selection-end="5621" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fray.lectures" pinned="false" current="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/a8f90a40/e1be254a-f7a6-4e38-bc1d-d56ff523f09e/fray..lectures">
-          <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
-            <state />
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -255,10 +243,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_show_students_table.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_show_students_table.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="36" selection-start="321" selection-end="321" vertical-scroll-proportion="0.40614334">
+            <state line="7" column="70" selection-start="233" selection-end="233" vertical-scroll-proportion="-2.6153846">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="overall_lecture_weight.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="35" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.5706107">
               <folding />
             </state>
           </provider>
@@ -284,7 +281,6 @@
         <option value="dbtable:/a8f90a40/e1be254a-f7a6-4e38-bc1d-d56ff523f09e/fray..grade_weights" />
         <option value="$PROJECT_DIR$/app/models/grade_weight.rb" />
         <option value="$PROJECT_DIR$/app/models/lecture.rb" />
-        <option value="$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20130718024635_create_grade_weights.rb" />
         <option value="$PROJECT_DIR$/app/controllers/grade_weights_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/grade.rb" />
@@ -293,6 +289,7 @@
         <option value="$PROJECT_DIR$/lib/tasks/faker.rake" />
         <option value="$PROJECT_DIR$/app/models/student.rb" />
         <option value="$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb" />
       </list>
     </option>
   </component>
@@ -990,10 +987,10 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32786885" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2931818" sideWeight="0.6557377" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2931818" sideWeight="0.6557377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Heroku" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33838382" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3442623" sideWeight="0.33636364" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3442623" sideWeight="0.33636364" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Regex Tester" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1002,7 +999,7 @@
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24318182" sideWeight="0.6557377" order="0" side_tool="false" content_ui="combo" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.63589746" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3442623" sideWeight="0.6628788" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3442623" sideWeight="0.6628788" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1078,13 +1075,6 @@
     <entry file="file://$PROJECT_DIR$/app/models/lecture.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="19" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="125" selection-start="1094" selection-end="1094" vertical-scroll-proportion="-9.461538">
           <folding />
         </state>
       </provider>
@@ -1193,7 +1183,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/lectures/_show_students_table.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="321" selection-end="321" vertical-scroll-proportion="0.40614334">
+        <state line="7" column="70" selection-start="233" selection-end="233" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="35" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.5706107">
           <folding />
         </state>
       </provider>

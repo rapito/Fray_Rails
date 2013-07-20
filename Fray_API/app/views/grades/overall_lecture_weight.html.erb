@@ -34,7 +34,7 @@
           <div class="btn-group down_pusher">
 
           <%= link_to I18n.t('fray.buttons.back'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn'%>
-          <input type="submit" value="<%=I18n.t('fray.assign') %>" class="btn btn-warning"/>
+          <input type="submit" onclick="checkValues();" value="<%=I18n.t('fray.assign') %>" class="btn btn-warning"/>
 
           </div>
 
