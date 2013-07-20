@@ -1,5 +1,6 @@
 <h1>Assign Weights</h1>
 
+<form action="/grade_weights/assign_weight/<%= @lecture.id %>" method="get">
     <table>
       <tr>
         <th>Grade</th>
@@ -9,30 +10,36 @@
             <td>Weight</td>
         <% end %>
         <th></th>
+        <th></th>
       </tr>
-      <%= form_for @lecture do |person_form| %>
-      <% @grades.each do |grade| %>
-          <tr>
-            <td><%= grade.comment %></td>
-            <td><%= grade.value %></td>
-            <% if @accum>0 %>
-                <td><%= @max_grades[@grades.index grade].value %></td>
-            <% end %>
-            <td>
-              <input type="text" class="wslider" value="0" data-slider-min="0"
-                     data-slider-max="1" data-slider-step="0.0001"
-                     data-slider-value="0" data-slider-orientation="horizontal"
-                     data-slider-selection="after" data-slider-tooltip="show">
-            </td>
-            <td><input name="weight_<%=@lecture.id.to_s+'_'+grade.id.to_s %>" type="number" class="slider-weight" value="0" step="0.0001"><%= grade.weight %></td>
 
-          </tr>
-      <% end %>
+          <% @grades.each do |grade| %>
+              <tr>
+                <td><%= grade.comment %></td>
+                <td><%= grade.value %></td>
+                <% if @accum>0 %>
+                    <td><%= @max_grades[@grades.index grade].value %></td>
+                <% end %>
+                <td>
+                  <input type="text" class="wslider" value="0" data-slider-min="0"
+                         data-slider-max="1" data-slider-step="0.0001"
+                         data-slider-value="0" data-slider-orientation="horizontal"
+                         data-slider-selection="after" data-slider-tooltip="show">
+                </td>
+                <td><input name="weight_<%= grade.id.to_s %>" type="number" class="slider-weight" value="0" step="0.0001"><%# @lecture.weights[@grades.index grade].weight %></td>
 
-      <% end %>
+              </tr>
+          <% end %>
+
+          <div class="btn-group down_pusher">
+
+          <%= link_to I18n.t('fray.buttons.back'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn'%>
+          <input type="submit" value="<%=I18n.t('fray.assign') %>" class="btn btn-warning"/>
+
+          </div>
 
     </table>
 
-  <%= link_to I18n.t('fray.buttons.back'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn'%>
-  <%= link_to I18n.t('fray.assign'), '/grades_weight/assign_weight/', :class => 'btn btn-warning'%>
+</form>
+
 

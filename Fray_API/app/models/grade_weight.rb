@@ -1,5 +1,5 @@
 class GradeWeight < ActiveRecord::Base
-  belongs_to :grade
-  validates_uniqueness_of :grade_id
+  belongs_to :lecture
+  #validates_uniqueness_of :grade_id
 
 end

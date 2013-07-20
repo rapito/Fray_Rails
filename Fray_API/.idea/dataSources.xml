@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="951179186">
+  <component name="DataSourceManagerImpl" format="xml" hash="2157133832">
     <data-source source="LOCAL" name="Rails Fray_Academic_System: test" product="MySQL" version="5.5.27-log" jdbc-version="4.0" driver-name="MySQL-AB JDBC Driver" driver-version="mysql-connector-java-5.1.18 ( Revision: tonci.grgin@oracle.com-20110930151701-jfj14ddfq48ifkfq )" uuid="e972e8c5-6753-463a-a82c-81be433e9bb2">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>

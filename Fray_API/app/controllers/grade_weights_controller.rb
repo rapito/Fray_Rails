@@ -32,14 +32,37 @@ class GradeWeightsController < ApplicationController
   end
 
   def assign_weight
-    @grade_weight = GradeWeight.new
-    puts params
+    grades = []
+    sep = 'weight_'
 
-
-
-    respond_to do |format|
-        format.html { redirect_to('/grades/manages/', :notice => 'Grade weight was successfully created.') }
+    @lecture = Lecture.find(params[:lecture_id])
+    params.each do |k,v|
+      if(k.start_with? sep)
+        gg = Grade.find(k.split(sep).last)
+        gg.value = v.to_f*10000
+        grades.push gg
+      end
     end
+
+    grades.each do |g|
+      weight = GradeWeight.where(:lecture_id => @lecture.id, :comment => g.comment).first
+      if not weight
+        weight = GradeWeight.new(:lecture_id => @lecture.id, :weight=> g.value, :comment => g.comment)
+        @lecture.weights << weight
+      else
+        weight.weight = g.value
+      end
+
+      @lecture.save!
+      weight.save!
+    end
+
+    begin
+      redirect_to('/grades/overall_lecture_weight/'+params[:lecture_id].to_s, :notice => 'Grade weight was successfully created.')
+    rescue
+      redirect_to('/grades/overall_lecture_weight/'+params[:lecture_id].to_s, :alert => 'Grade weight was successfully created.')
+    end
+
   end
 
   def close_grade

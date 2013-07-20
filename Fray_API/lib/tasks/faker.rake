@@ -158,7 +158,7 @@ namespace :db do
             :password_confirmation => "greatpasswordhuh",
             :group_id => Group.all.shuffle.first.id
         )
-        #s.assign_to_group
+        s.assign_to_group
         s.save!
 
       end
@@ -169,7 +169,7 @@ namespace :db do
         s.lectures.each do |l|
           I18n.t('fray.lecture_assignments').each do |x|
             grade = Grade.new
-            grade.value = rand(0..25)
+            grade.value = rand(20..25)
             grade.comment = x
             grade.student = s
             grade.lecture = l

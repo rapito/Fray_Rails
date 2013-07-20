@@ -3230,12 +3230,12 @@
     <schema name="" catalog="twitter_clone"/>
     <table name="grade_weights" schema="" catalog="fray" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="grade_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <column name="weight" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="lecture_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="weight" sqlType="DECIMAL" length="10" precision="0" nullable="true" jdbcType="3"/>
+      <column name="comment" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
-      <index name="unique_grade_id" unique="true" columns="grade_id"/>
     </table>
     <table name="grades" schema="" catalog="fray" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>

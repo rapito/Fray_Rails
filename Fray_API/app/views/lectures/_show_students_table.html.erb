@@ -8,7 +8,7 @@
       <th><%= I18n.t('fray.users.name') %></th>
       <th><%= I18n.t('fray.models.grade') %></th>
 
-      <% @lecture.students.each do |student| %>
+      <% @lecture.students.first(10).each do |student| %>
 
           <tr>
             <td></td>

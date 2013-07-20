@@ -14,13 +14,12 @@
 ActiveRecord::Schema.define(:version => 20130718024635) do
 
   create_table "grade_weights", :force => true do |t|
-    t.integer  "grade_id"
-    t.integer  "weight"
+    t.integer  "lecture_id"
+    t.decimal  "weight",     :precision => 10, :scale => 0
+    t.string   "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "grade_weights", ["grade_id"], :name => "unique_grade_id", :unique => true
 
   create_table "grades", :force => true do |t|
     t.string   "comment"

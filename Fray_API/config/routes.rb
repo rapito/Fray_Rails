@@ -1,6 +1,6 @@
 FrayAcademicSystem::Application.routes.draw do
 
-  resources :grade_weights
+
 
   #get "users/sign_in", to: "welcome#index"
 
@@ -33,8 +33,7 @@ FrayAcademicSystem::Application.routes.draw do
   #get "lectures/assign_students/:id/:student_id", to: "lectures#assign_students"
   get "schedules/manage", to: "schedules#manage"
 
-  get "grades_weight/assign_weight/", to: "grade_weights#assign_weight"
-  get "grades_weight/new/:student_id/:lecture_id", to: "grade_weights#close_grade"
+  get "grade_weights/assign_weight/:lecture_id", to: "grade_weights#assign_weight"
 
   get "/grades/overall_lecture/:lecture_id", to: "grades#overall_lecture"
   get "/grades/overall_lecture_weight/:lecture_id", to: "grades#overall_lecture_weight"
@@ -45,7 +44,6 @@ FrayAcademicSystem::Application.routes.draw do
 
 
   resources :lectures
-  resources :grade_weights
 
   resources :records
 

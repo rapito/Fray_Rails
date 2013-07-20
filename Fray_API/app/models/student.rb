@@ -68,14 +68,15 @@ class Student < User
 
   def get_accumulated_weighted_score lecture_id
     val = 0
+    lecture = Lecture.find(lecture_id)
     Grade.where(:lecture_id => lecture_id, :student_id => id).each  do |v|
-      if not v.grade_weight.eql? nil
-        val+=v.value*(v.grade_weight.weight/100.0)
+      if v.get_weight
+        val+=v.value/(v.get_weight.weight/10000.0)
       else
         val+=v.value
       end
     end
-    val
+    (val.to_i/4)-(2*((val.to_i/4)%100))
   end
 
   def get_grades_for lecture_id
