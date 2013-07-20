@@ -22,24 +22,43 @@ $().ready(function()
     $('#error_explanation h2').attr('class','alert alert-error');
     $('#error_explanation ul li').attr('class','alert alert-error');
 
-    $('.weight_slider').slider('setValue',0)
+    $('.wslider').slider('setValue',0)
         .on('slide', function(ev){
-            var sliders = $('.slider');
-
-            for(var i =0;i<sliders.length;i++)
-            {
-                if(sliders[i]!=this)
-                {
-
-                    if(sliders[i].value>this.value)
-                    {
-                        sliders[i].value -= 0.01;
-                    }
-                }
-            }
+            slidee(this);
         });
+    setInterval(function(){
+        var sliders = $('.wslider');
+
+        for(var i =0;i<sliders.length;i++)
+        {
+            var sl = $(sliders[i]);
+//            console.log ( sl.slider('isDragged') );
+            if(sl.slider('isDragged') == true)
+            {
+                console.log(5);
+            }
+        }
+    },1)
 
 });
+
+var slidee = function(x)
+{
+    var sliders = $('.wslider');
+
+    for(var i =0;i<sliders.length;i++)
+    {
+        var sl = $(sliders[i]);
+        if(sliders[i]!=x)
+        {
+
+            if(sl.slider('getValue')>this.value)
+            {
+                sl.slider('reduceValue');
+            }
+        }
+    }
+}
 
 var assignLectureToAddStudentForm = function(val)
 {

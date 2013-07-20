@@ -48,7 +48,7 @@
     <file path="/index_teachers.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372976485061" ignored="false" />
     <file path="/index_students.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372976527089" ignored="false" />
     <file path="/application.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372976799379" ignored="false" />
-    <file path="/main.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374296465093" ignored="false" />
+    <file path="/main.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374299865614" ignored="false" />
     <file path="/groups_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374105291361" ignored="false" />
     <file path="/manage.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374203944438" ignored="false" />
     <file path="/lectures_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374099904495" ignored="false" />
@@ -133,7 +133,8 @@
     <file path="/grade_weight.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374126105045" ignored="false" />
     <file path="/schema.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374123991477" ignored="false" />
     <file path="/_students.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374204485919" ignored="false" />
-    <file path="/overall_lecture.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374295393783" ignored="false" />
+    <file path="/overall_lecture.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374297788806" ignored="false" />
+    <file path="/bootstrap-slider.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374299845054" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,12 +173,12 @@
       <file leaf-file-name="bootstrap-slider.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/bootstrap-slider.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="357" column="43" selection-start="10251" selection-end="10251" vertical-scroll-proportion="-6.48">
+            <state line="153" column="42" selection-start="4749" selection-end="4749" vertical-scroll-proportion="-4.88">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#903#4629#0" expanded="false" />
-                <element signature="e#4652#10208#0" expanded="false" />
-                <element signature="e#10612#10801#0" expanded="false" />
+                <element signature="e#4778#4956#0" expanded="false" />
+                <element signature="e#9751#10390#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -215,7 +216,7 @@
       <file leaf-file-name="overall_lecture.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="36" selection-start="373" selection-end="386" vertical-scroll-proportion="-5.230769">
+            <state line="17" column="36" selection-start="373" selection-end="380" vertical-scroll-proportion="-7.1923075">
               <folding />
             </state>
           </provider>
@@ -235,7 +236,7 @@
       <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="76" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.7592068">
+            <state line="35" column="53" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.7110482">
               <folding />
             </state>
           </provider>
@@ -272,7 +273,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/grades/_form_with_student.html.erb" />
         <option value="$PROJECT_DIR$/app/helpers/grades_helper.rb" />
         <option value="dbtable:/a8f90a40/e1be254a-f7a6-4e38-bc1d-d56ff523f09e/fray..grades" />
         <option value="$PROJECT_DIR$/app/views/grades/_groups.html.erb" />
@@ -287,6 +287,7 @@
         <option value="$PROJECT_DIR$/app/controllers/grades_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb" />
+        <option value="$PROJECT_DIR$/public/javascripts/bootstrap-slider.js" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
       </list>
     </option>
@@ -1056,7 +1057,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1136,15 +1137,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/grades/manage.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="7.8461537">
@@ -1154,7 +1146,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="373" selection-end="386" vertical-scroll-proportion="-5.230769">
+        <state line="17" column="36" selection-start="373" selection-end="380" vertical-scroll-proportion="-7.1923075">
           <folding />
         </state>
       </provider>
@@ -1166,21 +1158,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/bootstrap-slider.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="357" column="43" selection-start="10251" selection-end="10251" vertical-scroll-proportion="-6.48">
+        <state line="153" column="42" selection-start="4749" selection-end="4749" vertical-scroll-proportion="-4.88">
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#903#4629#0" expanded="false" />
-            <element signature="e#4652#10208#0" expanded="false" />
-            <element signature="e#10612#10801#0" expanded="false" />
+            <element signature="e#4778#4956#0" expanded="false" />
+            <element signature="e#9751#10390#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="76" selection-start="1081" selection-end="1081" vertical-scroll-proportion="0.7592068">
+        <state line="35" column="53" selection-start="1159" selection-end="1159" vertical-scroll-proportion="0.7110482">
           <folding />
         </state>
       </provider>

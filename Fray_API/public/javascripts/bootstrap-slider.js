@@ -146,12 +146,13 @@
 		}
 	};
 
-	Slider.prototype = {
+    Slider.prototype = {
 		constructor: Slider,
 
 		over: false,
 		inDrag: false,
-		
+		isDragged: function(){return false},
+
 		showTooltip: function(){
 			this.tooltip.addClass('in');
 			//var left = Math.round(this.percent*this.width);
@@ -323,12 +324,16 @@
 			return Math.max(0, Math.min(100, percentage));
 		},
 
-		getValue: function() {
-			if (this.range) {
-				return this.value;
-			}
-			return this.value[0];
-		},
+        getValue: function() {
+            if (this.range) {
+                return this.value;
+            }
+            return this.value[0];
+        },
+
+        reduceValue: function() {
+            this.setValue(this.value[0]-0.001);
+        },
 
 		setValue: function(val) {
 			this.value = val;
