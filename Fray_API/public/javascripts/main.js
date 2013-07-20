@@ -47,6 +47,8 @@ $().ready(function()
 
         }
     });
+
+
 //            var sliders = $('.wslider');
 //
 //            for(var i =0;i<sliders.length;i++)
@@ -88,3 +90,15 @@ var assignWeightToGrade = function(val)
     $('#weight_grade_id').attr('value',val);
 }
 
+var checkValues = function()
+{
+    var sliders = $('.slider-weight');
+    var accum = 0;
+    for(var i =0;i<sliders.length;i++)
+    {
+        accum += parseFloat($(sliders[i]).html());
+    }
+
+    if(accum<1) return false;
+    else return true;
+}
