@@ -4,13 +4,13 @@
     <list default="true" id="d7b89dfc-9593-49cd-94c3-af90917785db" name="Default" comment="" />
     <ignored path="Fray_Academic_System.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/routes.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374204838344" ignored="false" />
+    <file path="/routes.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374304693669" ignored="false" />
     <file path="/index.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374121401528" ignored="false" />
     <file path="/layout.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372202410629" ignored="false" />
     <file path="/20130626004354_create_personas.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372207460933" ignored="false" />
     <file path="$USER_HOME$/Work/INTEC/MAY-JUL 2013/ABREU/Assignment 3/API/app.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372221329139" ignored="false" />
     <file path="/app.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372221198584" ignored="false" />
-    <file path="/application.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374131796729" ignored="false" />
+    <file path="/application.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374303859129" ignored="false" />
     <file path="/new.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373936422599" ignored="false" />
     <file path="/estudiantes_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1372297740758" ignored="false" />
     <file path="/_form.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374041002353" ignored="false" />
@@ -57,7 +57,7 @@
     <file path="/records_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373116952065" ignored="false" />
     <file path="/periods_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373233929825" ignored="false" />
     <file path="/institutions_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373117345598" ignored="false" />
-    <file path="/grades_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374291205524" ignored="false" />
+    <file path="/grades_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374305580696" ignored="false" />
     <file path="/application.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1373828949241" ignored="false" />
     <file path="/student.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374130035506" ignored="false" />
     <file path="/teacher.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374039042865" ignored="false" />
@@ -127,15 +127,16 @@
     <file path="/20130717064633_lecture_student.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374103957544" ignored="false" />
     <file path="/20130717064703_subjtect_teacher.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374104312235" ignored="false" />
     <file path="/20130718024635_create_grade_weights.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374126006299" ignored="false" />
-    <file path="/grade_weights_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374127008084" ignored="false" />
+    <file path="/grade_weights_controller.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374305985546" ignored="false" />
     <file path="/close_grade.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374127611213" ignored="false" />
     <file path="/_assign_weights.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374123296126" ignored="false" />
     <file path="/grade_weight.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374126105045" ignored="false" />
     <file path="/schema.rb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374123991477" ignored="false" />
-    <file path="/_students.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374302971218" ignored="false" />
-    <file path="/overall_lecture.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374302827160" ignored="false" />
+    <file path="/_students.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374303092667" ignored="false" />
+    <file path="/overall_lecture.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374304191672" ignored="false" />
     <file path="/bootstrap-slider.js" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374300813318" ignored="false" />
     <file path="/slider.css" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374302634384" ignored="false" />
+    <file path="/overall_lecture_weight.html.erb" changelist="d7b89dfc-9593-49cd-94c3-af90917785db" time="1374305813831" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,23 +166,8 @@
       <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="35" selection-start="255" selection-end="255" vertical-scroll-proportion="5.230769">
+            <state line="67" column="119" selection-start="2035" selection-end="2035" vertical-scroll-proportion="-2.6153846">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bootstrap-slider.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/bootstrap-slider.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="194" column="15" selection-start="6297" selection-end="6304" vertical-scroll-proportion="-18.48">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#4779#4957#0" expanded="false" />
-                <element signature="e#9199#9473#0" expanded="false" />
-                <element signature="e#9505#9629#0" expanded="false" />
-                <element signature="e#9842#10481#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -189,7 +175,7 @@
       <file leaf-file-name="grades_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/grades_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="51" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.0">
+            <state line="138" column="18" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#378#638#0" expanded="false" />
               </folding>
@@ -197,48 +183,51 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="groups_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/groups_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="27" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="overall_lecture.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="126" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-7.5">
+            <state line="5" column="15" selection-start="74" selection-end="74" vertical-scroll-proportion="-3.2692308">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grade.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/grade.rb">
+      <file leaf-file-name="grade_weights_controller.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/grade_weights_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="35" selection-start="135" selection-end="146" vertical-scroll-proportion="0.0">
+            <state line="34" column="34" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/application.js">
+      <file leaf-file-name="overall_lecture_weight.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="36" column="52" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-6.0384617">
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="e#295#1061#0" expanded="false" />
+                <element signature="tag#tr#1;tag#table#0" expanded="false" />
+                <element signature="e#421#525#0" expanded="false" />
+                <element signature="tag#td#3;tag#tr#1;tag#table#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/main.js">
+      <file leaf-file-name="_trace.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="42" selection-start="1354" selection-end="1354" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="slider.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/stylesheets/slider.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="21" selection-start="4232" selection-end="4232" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -247,16 +236,25 @@
       <file leaf-file-name="manage.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/grades/manage.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="9.807693">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_students.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_students.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/grades/_students.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="34" selection-start="417" selection-end="417" vertical-scroll-proportion="0.43312103">
+            <state line="30" column="39" selection-start="1237" selection-end="1237" vertical-scroll-proportion="-7.8461537">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/routes.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="35" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -275,22 +273,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="dbtable:/a8f90a40/e1be254a-f7a6-4e38-bc1d-d56ff523f09e/fray..grades" />
-        <option value="$PROJECT_DIR$/app/views/grades/_groups.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/grades/manage.html.erb" />
         <option value="$PROJECT_DIR$/app/views/grades/new_with_student.html.erb" />
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/lib/tasks/faker.rake" />
         <option value="$PROJECT_DIR$/config/locales/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/es.yml" />
-        <option value="$PROJECT_DIR$/app/controllers/grades_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/public/javascripts/bootstrap-slider.js" />
         <option value="$PROJECT_DIR$/app/models/grade.rb" />
         <option value="$PROJECT_DIR$/public/javascripts/main.js" />
         <option value="$PROJECT_DIR$/public/stylesheets/slider.css" />
-        <option value="$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/groups_controller.rb" />
+        <option value="$PROJECT_DIR$/lib/tasks/faker.rake" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/grades/_students.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb" />
+        <option value="$PROJECT_DIR$/config/routes.rb" />
+        <option value="$PROJECT_DIR$/app/controllers/grades_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/grade_weights_controller.rb" />
       </list>
     </option>
   </component>
@@ -363,7 +361,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plugins" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,29 +379,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="stylesheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fray_Academic_System" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fray_API" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,7 +425,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="doc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fray_Academic_System" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Fray_API" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="db" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -460,10 +454,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="locales" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -525,7 +515,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="grades" />
+              <option name="myItemId" value="grade_weights" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -557,25 +547,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fray_Academic_System" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Fray_API" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="helpers" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1081,59 +1053,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1372198556963" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1372198556963" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1372198556963" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/tasks/faker.rake">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="171" column="32" selection-start="5620" selection-end="5620" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/grades/_lectures.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="12" selection-start="714" selection-end="860" vertical-scroll-proportion="-3.5769231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/en.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="6" selection-start="1563" selection-end="1573" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/es.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="18" selection-start="1323" selection-end="1323" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="35" selection-start="255" selection-end="255" vertical-scroll-proportion="5.230769">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/grade.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="35" selection-start="135" selection-end="146" vertical-scroll-proportion="0.0">
@@ -1146,15 +1065,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/grades_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="51" selection-start="1706" selection-end="1706" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#378#638#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1186,23 +1096,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb">
+    <entry file="file://$PROJECT_DIR$/lib/tasks/faker.rake">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="126" selection-start="1029" selection-end="1029" vertical-scroll-proportion="-7.5">
+        <state line="161" column="23" selection-start="5360" selection-end="5360" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/grades/manage.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="3.9230769">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="9.807693">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/grades/_students.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="34" selection-start="417" selection-end="417" vertical-scroll-proportion="0.43312103">
+        <state line="30" column="39" selection-start="1237" selection-end="1237" vertical-scroll-proportion="-7.8461537">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="15" selection-start="74" selection-end="74" vertical-scroll-proportion="-3.2692308">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/grades_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="138" column="18" selection-start="2882" selection-end="2882" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#378#638#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="119" selection-start="2035" selection-end="2035" vertical-scroll-proportion="-2.6153846">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/groups_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="27" selection-start="671" selection-end="671" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="35" selection-start="1120" selection-end="1120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/grades/overall_lecture_weight.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="52" selection-start="1273" selection-end="1273" vertical-scroll-proportion="-6.0384617">
+          <folding>
+            <element signature="e#295#1061#0" expanded="false" />
+            <element signature="tag#tr#1;tag#table#0" expanded="false" />
+            <element signature="e#421#525#0" expanded="false" />
+            <element signature="tag#td#3;tag#tr#1;tag#table#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/grade_weights_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="34" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.0.20/lib/action_dispatch/middleware/templates/rescues/_trace.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>

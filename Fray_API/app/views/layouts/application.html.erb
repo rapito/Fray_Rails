@@ -41,8 +41,8 @@
                   <%= form_for resource_name , resource,:url => session_path(resource_name) do |f|%>
                       <div class="navbar-form pull-right">
 
-                      <%= f.text_field :email %>
-                      <%= f.password_field :password %>
+                      <%= f.text_field :email, :placeholder => 'Username' %>
+                      <%= f.password_field :password, :placeholder => 'Password'%>
 
                         <%= f.submit "Sign in" %>
                       </div>
@@ -65,7 +65,7 @@
 
         <div>
           <% flash.each do |key, value| %>
-              <div class="alert <%= if key.to_s=='error'
+              <div class="alert <%= if key.to_s=='error' or key.to_s=='alert' or key.to_s=='danger' or key.to_s=='block'
                                       'alert-error'
                                       else
                                       'alert-success'

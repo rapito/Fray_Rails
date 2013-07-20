@@ -37,6 +37,7 @@ FrayAcademicSystem::Application.routes.draw do
   get "grades_weight/new/:student_id/:lecture_id", to: "grade_weights#close_grade"
 
   get "/grades/overall_lecture/:lecture_id", to: "grades#overall_lecture"
+  get "/grades/overall_lecture_weight/:lecture_id", to: "grades#overall_lecture_weight"
   get "grades/manage", to: "grades#manage"
   get "grades/manage/:id", to: "grades#manage"
   get "grades/manage/:id/:lecture_id", to: "grades#manage"

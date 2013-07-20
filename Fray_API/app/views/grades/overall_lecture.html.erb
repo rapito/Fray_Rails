@@ -1,31 +1,25 @@
-<h1>Assign Weights</h1>
+<h1>Overall Grades</h1>
 
 <table>
   <tr>
     <th>Grade</th>
-    <th>Value</th>
-    <th>Max Grade</th>
-    <th>Weight</th>
-    <th></th>
+    <th>Average</th>
+    <% if @accum>0 %>
+      <th>Max Grade</th>
+    <% end %>
   </tr>
 
   <% @grades.each do |grade| %>
       <tr>
         <td><%= grade.comment %></td>
         <td><%= grade.value %></td>
+        <% if @accum>0 %>
         <td><%= @max_grades[@grades.index grade].value %></td>
-        <td>
-          <input type="text" class="wslider" value="0" data-slider-min="0"
-                 data-slider-max="1" data-slider-step="0.0001"
-                 data-slider-value="0" data-slider-orientation="horizontal"
-                 data-slider-selection="after" data-slider-tooltip="show">
-        </td>
-        <td><input type="number" class="slider-weight" value="0" step="0.0001"><%= grade.weight %></td>
+        <% end %>
 
       </tr>
   <% end %>
 </table>
 
   <%= link_to I18n.t('fray.buttons.back'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn'%>
-  <%= link_to I18n.t('fray.assign'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn btn-warning'%>
 

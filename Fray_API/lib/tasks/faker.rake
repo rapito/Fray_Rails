@@ -158,7 +158,7 @@ namespace :db do
             :password_confirmation => "greatpasswordhuh",
             :group_id => Group.all.shuffle.first.id
         )
-        s.assign_to_group
+        #s.assign_to_group
         s.save!
 
       end

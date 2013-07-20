@@ -92,10 +92,52 @@ class GradesController < ApplicationController
           @accum += g.value
         end
 
-        @accum /=   local_grades.size ;
+        if local_grades.size > 0
+          @accum /=   local_grades.size ;
+        else
+          @accum = 0;
+        end
 
         @max_grades.push local_grades.highest.first
         @grades.push Grade.new(:value => @accum,:comment => x)
+      end
+    end
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json  { render :json => @grade }
+    end
+  end
+
+  def overall_lecture_weight
+
+    @lecture = Lecture.find(params[:lecture_id])
+    @grades = []
+    @max_grades = []
+    rend = []
+    I18n.t('fray.lecture_assignments').each do |x|
+
+      if not rend.include? x
+        rend.push x
+        @accum = 0
+        local_grades = Grade.by_lecture(@lecture.id).by_assignment(x)
+
+        local_grades.each do |g|
+          @accum += g.value
+        end
+
+        if local_grades.size > 0
+          @accum /=   local_grades.size ;
+        else
+          @accum = 0;
+        end
+
+        @max_grades.push local_grades.highest.first
+        grad = Grade.new(:value => @accum,:comment => x)
+        grad.lecture = @lecture
+        @grades.push grad
+        grad.save!
+
       end
     end
 

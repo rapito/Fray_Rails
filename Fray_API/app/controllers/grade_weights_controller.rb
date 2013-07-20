@@ -32,19 +32,13 @@ class GradeWeightsController < ApplicationController
   end
 
   def assign_weight
-    puts
     @grade_weight = GradeWeight.new
-    @grade_weight.grade = Grade.find(params[:weight][:grade_id])
-    @grade_weight.weight = params[:weight][:weight]
+    puts params
+
+
 
     respond_to do |format|
-      if @grade_weight.save
-        format.html { redirect_to('/grades/manage/'+@grade_weight.grade.lecture.group.id.to_s+'/'+@grade_weight.grade.lecture.id.to_s, :notice => 'Grade weight was successfully created.') }
-        format.xml  { render :xml => @grade_weight, :status => :created, :location => @grade_weight }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @grade_weight.errors, :status => :unprocessable_entity }
-      end
+        format.html { redirect_to('/grades/manages/', :notice => 'Grade weight was successfully created.') }
     end
   end
 
