@@ -72,8 +72,21 @@ $().ready(function()
 //            }
 //        });
 
+    setInterval(checkWeights,1)  ;
 
 });
+
+var checkWeights = function()
+{
+    if(checkValues() === true)
+    {
+        $('#weight-btn').attr('class','btn btn-warning');
+    }
+    else
+    {
+        $('#weight-btn').attr('class','btn btn-warning disabled');
+    }
+}
 
 var getSliderValue = function(i)
 {
@@ -96,9 +109,9 @@ var checkValues = function()
     var accum = 0;
     for(var i =0;i<sliders.length;i++)
     {
-        accum += parseFloat($(sliders[i]).html());
+        accum += parseFloat(sliders[i].value);
     }
 
-    if(accum<1) return false;
+    if(accum!=1) return false;
     else return true;
 }

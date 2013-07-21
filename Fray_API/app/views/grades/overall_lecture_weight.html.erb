@@ -34,7 +34,7 @@
           <div class="btn-group down_pusher">
 
           <%= link_to I18n.t('fray.buttons.back'), '/grades/manage/'+@lecture.group.id.to_s+'/'+@lecture.id.to_s, :class => 'btn'%>
-          <input type="submit" onclick="if(checkValues()) return true; else return false;" value="<%=I18n.t('fray.assign') %>" class="btn btn-warning"/>
+          <input id="weight-btn" type="submit" onclick="if(checkValues()) return true; else return false;" value="<%=I18n.t('fray.assign') %>" class="btn btn-warning"/>
 
           </div>
 
