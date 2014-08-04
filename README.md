@@ -85,4 +85,4 @@ Dependencies:
 License
 --------------
 
-Please see the LICENSE[link://files/LICENSE_txt.html] file.
+Please see the LICENSE[https://github.com/rapito/Fray_Rails/LICENSE.txt] file.
