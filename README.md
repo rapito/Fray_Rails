@@ -1,6 +1,6 @@
 Last Update: 18.07.2013 - Robert Peralta
 
-= Fray Ramón Pané Academic System
+= Fray RamÃ³n PanÃ© Academic System
 
 https://github.com/rapito/Fray_Rails
 
@@ -10,7 +10,7 @@ https://github.com/rapito/Fray_Rails
 
 == Description
 
-The Fray Academic System is designed to manage the basic entities of a school academic system. It was based on Fray Ramón Pané's School need to implement a new system. The basic functionalities allows the users to personalize at some point the Lectures and groups within the scope of their need.
+The Fray Academic System is designed to manage the basic entities of a school academic system. It was based on Fray RamÃ³n PanÃ©'s School need to implement a new system. The basic functionalities allows the users to personalize at some point the Lectures and groups within the scope of their need.
 
 Also, the application is a final project for INTEC's Ruby on Rails class
 (MAY-JUL 2013) by Josue Abreu. http://joshonrails.com/
