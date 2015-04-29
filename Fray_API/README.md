@@ -52,9 +52,10 @@ jquery-rails
 faker (optional)
 == Installation
 
-Having your database up and running, bundle install on the application root folder.
-Rake db:migrate:faker to execute the migration and fill up the tables for testing.
-rails server and you know the drill.
+- Having your database up and running, bundle install on the application root folder.
+- Rake db:development:faker to execute the migration and fill up the tables for testing.
+- rails server and you know the drill.
+
 == Authors
 
 Original Code:
