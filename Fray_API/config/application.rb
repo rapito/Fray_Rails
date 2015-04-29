@@ -16,6 +16,7 @@ module FrayAcademicSystem
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    ActionController::Base.config.relative_url_root = ''
 
   end
 end
